@@ -13,6 +13,8 @@
 #import "HelloWorldLayer.h"
 #import "RootViewController.h"
 
+#define kTestFlightToken @"b4ce235c6239b040dc81faa44ad4ad2c_MzQ2NjUyMDExLTEwLTE0IDIyOjA4OjE0LjEyMTg2Nw"
+
 @implementation AppDelegate
 
 @synthesize window;
@@ -41,6 +43,7 @@
 
 - (void) applicationDidFinishLaunching:(UIApplication*)application
 {
+    [TestFlight takeOff:kTestFlightToken];
 	// Init the window
 	window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	
@@ -112,6 +115,8 @@
 	
 	// Run the intro Scene
 	[[CCDirector sharedDirector] runWithScene: [HelloWorldLayer scene]];
+    
+    [TestFlight passCheckpoint:@"Application did finish launching"];
 }
 
 
@@ -144,7 +149,8 @@
 	
 	[window release];
 	
-	[director end];	
+	[director end];
+    [TestFlight passCheckpoint:@"Application was terminated"];
 }
 
 - (void)applicationSignificantTimeChange:(UIApplication *)application {
