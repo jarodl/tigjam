@@ -9,8 +9,8 @@
 #import "cocos2d.h"
 
 #import "AppDelegate.h"
-#import "GameConfig.h"
-#import "HelloWorldLayer.h"
+//#import "HelloWorldLayer.h"
+#import "GameScene.h"
 #import "RootViewController.h"
 
 #define kTestFlightToken @"b4ce235c6239b040dc81faa44ad4ad2c_MzQ2NjUyMDExLTEwLTE0IDIyOjA4OjE0LjEyMTg2Nw"
@@ -21,24 +21,15 @@
 
 - (void) removeStartupFlicker
 {
-	//
-	// THIS CODE REMOVES THE STARTUP FLICKER
-	//
-	// Uncomment the following code if you Application only supports landscape mode
-	//
-#if GAME_AUTOROTATION == kGameAutorotationUIViewController
-	
-	//	CC_ENABLE_DEFAULT_GL_STATES();
-	//	CCDirector *director = [CCDirector sharedDirector];
-	//	CGSize size = [director winSize];
-	//	CCSprite *sprite = [CCSprite spriteWithFile:@"Default.png"];
-	//	sprite.position = ccp(size.width/2, size.height/2);
-	//	sprite.rotation = -90;
-	//	[sprite visit];
-	//	[[director openGLView] swapBuffers];
-	//	CC_ENABLE_DEFAULT_GL_STATES();
-	
-#endif // GAME_AUTOROTATION == kGameAutorotationUIViewController	
+	CC_ENABLE_DEFAULT_GL_STATES();
+	CCDirector *director = [CCDirector sharedDirector];
+	CGSize size = [director winSize];
+	CCSprite *sprite = [CCSprite spriteWithFile:@"Default.png"];
+	sprite.position = ccp(size.width/2, size.height/2);
+	sprite.rotation = -90;
+	[sprite visit];
+	[[director openGLView] swapBuffers];
+	CC_ENABLE_DEFAULT_GL_STATES();
 }
 
 - (void) applicationDidFinishLaunching:(UIApplication*)application
@@ -73,28 +64,13 @@
 	// attach the openglView to the director
 	[director setOpenGLView:glView];
 	
-//	// Enables High Res mode (Retina Display) on iPhone 4 and maintains low res on all other devices
-//	if( ! [director enableRetinaDisplay:YES] )
-//		CCLOG(@"Retina Display Not supported");
-	
-	//
-	// VERY IMPORTANT:
-	// If the rotation is going to be controlled by a UIViewController
-	// then the device orientation should be "Portrait".
-	//
-	// IMPORTANT:
-	// By default, this template only supports Landscape orientations.
-	// Edit the RootViewController.m file to edit the supported orientations.
-	//
-#if GAME_AUTOROTATION == kGameAutorotationUIViewController
-	[director setDeviceOrientation:kCCDeviceOrientationPortrait];
-#else
+	// Enables High Res mode (Retina Display) on iPhone 4 and maintains low res on all other devices
+	if (![director enableRetinaDisplay:YES])
+		CCLOG(@"Retina Display Not supported");
+
 	[director setDeviceOrientation:kCCDeviceOrientationLandscapeLeft];
-#endif
-	
 	[director setAnimationInterval:1.0/60];
 	[director setDisplayFPS:YES];
-	
 	
 	// make the OpenGLView a child of the view controller
 	[viewController setView:glView];
@@ -109,12 +85,11 @@
 	// You can change anytime.
 	[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA8888];
 
-	
 	// Removes the startup flicker
 	[self removeStartupFlicker];
 	
 	// Run the intro Scene
-	[[CCDirector sharedDirector] runWithScene: [HelloWorldLayer scene]];
+	[[CCDirector sharedDirector] runWithScene:[GameScene scene]];
     
     [TestFlight passCheckpoint:@"Application did finish launching"];
 }

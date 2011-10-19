@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A32C8D7144F192500FD2C94 /* tigjam-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A32C8D3144F192400FD2C94 /* tigjam-hd.plist */; };
+		7A32C8D8144F192500FD2C94 /* tigjam-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 7A32C8D4144F192400FD2C94 /* tigjam-hd.pvr.ccz */; };
+		7A32C8D9144F192500FD2C94 /* tigjam.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A32C8D5144F192400FD2C94 /* tigjam.plist */; };
+		7A32C8DA144F192500FD2C94 /* tigjam.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 7A32C8D6144F192400FD2C94 /* tigjam.pvr.ccz */; };
 		7A4DBAAE14491E9700741C3E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4DBAAD14491E9700741C3E /* QuartzCore.framework */; };
 		7A4DBAB014491E9700741C3E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4DBAAF14491E9700741C3E /* OpenGLES.framework */; };
 		7A4DBAB214491E9700741C3E /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4DBAB114491E9700741C3E /* OpenAL.framework */; };
@@ -153,16 +157,21 @@
 		7A4DBC7514491E9900741C3E /* b2PulleyJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DBC7414491E9900741C3E /* b2PulleyJoint.cpp */; };
 		7A4DBC7814491E9900741C3E /* b2RevoluteJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DBC7714491E9900741C3E /* b2RevoluteJoint.cpp */; };
 		7A4DBC7B14491E9900741C3E /* b2WeldJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DBC7A14491E9900741C3E /* b2WeldJoint.cpp */; };
-		7A4DBC8114491E9900741C3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DBC8014491E9900741C3E /* main.m */; };
 		7A4DBC8414491E9900741C3E /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DBC8314491E9900741C3E /* AppDelegate.mm */; };
 		7A4DBC8714491E9900741C3E /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DBC8614491E9900741C3E /* RootViewController.m */; };
 		7A4DBC8A14491E9900741C3E /* HelloWorldLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DBC8914491E9900741C3E /* HelloWorldLayer.mm */; };
 		7A4DBC8D14491E9900741C3E /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DBC8C14491E9900741C3E /* GLES-Render.mm */; };
 		7A4DBC9014491E9900741C3E /* blocks.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A4DBC8F14491E9900741C3E /* blocks.png */; };
-		7A4DBC99144920D600741C3E /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4DBC97144920D600741C3E /* libTestFlight.a */; };
+		7AD13E4C144F0DA70098E10C /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD13E4A144F0DA70098E10C /* libTestFlight.a */; };
+		7AD13E53144F0F110098E10C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD13E51144F0F110098E10C /* main.m */; };
+		7AD13E56144F11AE0098E10C /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD13E55144F11AE0098E10C /* GameScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A32C8D3144F192400FD2C94 /* tigjam-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "tigjam-hd.plist"; sourceTree = "<group>"; };
+		7A32C8D4144F192400FD2C94 /* tigjam-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tigjam-hd.pvr.ccz"; sourceTree = "<group>"; };
+		7A32C8D5144F192400FD2C94 /* tigjam.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tigjam.plist; sourceTree = "<group>"; };
+		7A32C8D6144F192400FD2C94 /* tigjam.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = tigjam.pvr.ccz; sourceTree = "<group>"; };
 		7A4DBAA914491E9700741C3E /* tigjam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tigjam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A4DBAAD14491E9700741C3E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7A4DBAAF14491E9700741C3E /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -462,8 +471,6 @@
 		7A4DBC7A14491E9900741C3E /* b2WeldJoint.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = b2WeldJoint.cpp; path = libs/Box2D/Dynamics/Joints/b2WeldJoint.cpp; sourceTree = "<group>"; };
 		7A4DBC7C14491E9900741C3E /* b2WeldJoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = b2WeldJoint.h; path = libs/Box2D/Dynamics/Joints/b2WeldJoint.h; sourceTree = "<group>"; };
 		7A4DBC7D14491E9900741C3E /* LICENSE_Box2D.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE_Box2D.txt; path = libs/LICENSE_Box2D.txt; sourceTree = "<group>"; };
-		7A4DBC7F14491E9900741C3E /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
-		7A4DBC8014491E9900741C3E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7A4DBC8214491E9900741C3E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7A4DBC8314491E9900741C3E /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		7A4DBC8514491E9900741C3E /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
@@ -472,10 +479,13 @@
 		7A4DBC8914491E9900741C3E /* HelloWorldLayer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HelloWorldLayer.mm; sourceTree = "<group>"; };
 		7A4DBC8B14491E9900741C3E /* GLES-Render.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLES-Render.h"; sourceTree = "<group>"; };
 		7A4DBC8C14491E9900741C3E /* GLES-Render.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GLES-Render.mm"; sourceTree = "<group>"; };
-		7A4DBC8E14491E9900741C3E /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
 		7A4DBC8F14491E9900741C3E /* blocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocks.png; path = Resources/blocks.png; sourceTree = "<group>"; };
-		7A4DBC97144920D600741C3E /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
-		7A4DBC98144920D600741C3E /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		7AD13E4A144F0DA70098E10C /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		7AD13E4B144F0DA70098E10C /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		7AD13E51144F0F110098E10C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7AD13E52144F0F110098E10C /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		7AD13E54144F11AE0098E10C /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		7AD13E55144F11AE0098E10C /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -491,13 +501,32 @@
 				7A4DBAB814491E9700741C3E /* UIKit.framework in Frameworks */,
 				7A4DBABA14491E9700741C3E /* Foundation.framework in Frameworks */,
 				7A4DBABC14491E9700741C3E /* CoreGraphics.framework in Frameworks */,
-				7A4DBC99144920D600741C3E /* libTestFlight.a in Frameworks */,
+				7AD13E4C144F0DA70098E10C /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A32C8D1144F192400FD2C94 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				7A32C8D2144F192400FD2C94 /* Spritesheets */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		7A32C8D2144F192400FD2C94 /* Spritesheets */ = {
+			isa = PBXGroup;
+			children = (
+				7A32C8D3144F192400FD2C94 /* tigjam-hd.plist */,
+				7A32C8D4144F192400FD2C94 /* tigjam-hd.pvr.ccz */,
+				7A32C8D5144F192400FD2C94 /* tigjam.plist */,
+				7A32C8D6144F192400FD2C94 /* tigjam.pvr.ccz */,
+			);
+			path = Spritesheets;
+			sourceTree = "<group>";
+		};
 		7A4DBA9E14491E9600741C3E = {
 			isa = PBXGroup;
 			children = (
@@ -533,6 +562,7 @@
 		7A4DBABD14491E9700741C3E /* tigjam */ = {
 			isa = PBXGroup;
 			children = (
+				7AD13E57144F12610098E10C /* Supporting FIles */,
 				7A4DBC8214491E9900741C3E /* AppDelegate.h */,
 				7A4DBC8314491E9900741C3E /* AppDelegate.mm */,
 				7A4DBC8514491E9900741C3E /* RootViewController.h */,
@@ -541,10 +571,11 @@
 				7A4DBC8914491E9900741C3E /* HelloWorldLayer.mm */,
 				7A4DBC8B14491E9900741C3E /* GLES-Render.h */,
 				7A4DBC8C14491E9900741C3E /* GLES-Render.mm */,
-				7A4DBC8E14491E9900741C3E /* GameConfig.h */,
+				7AD13E54144F11AE0098E10C /* GameScene.h */,
+				7AD13E55144F11AE0098E10C /* GameScene.m */,
 				7A4DBABE14491E9700741C3E /* Resources */,
+				7A32C8D1144F192400FD2C94 /* Generated */,
 				7A4DBAD214491E9700741C3E /* libs */,
-				7A4DBC7E14491E9900741C3E /* Supporting Files */,
 			);
 			path = tigjam;
 			sourceTree = "<group>";
@@ -570,7 +601,7 @@
 		7A4DBAD214491E9700741C3E /* libs */ = {
 			isa = PBXGroup;
 			children = (
-				7A4DBC96144920C400741C3E /* TestFlight */,
+				7AD13E49144F0DA70098E10C /* TestFlight */,
 				7A4DBBC814491E9800741C3E /* LICENSE_cocos2d.txt */,
 				7A4DBBD714491E9800741C3E /* LICENSE_CocosDenshion.txt */,
 				7A4DBBE214491E9800741C3E /* LICENSE_TouchJSON.txt */,
@@ -999,25 +1030,43 @@
 			name = Joints;
 			sourceTree = "<group>";
 		};
-		7A4DBC7E14491E9900741C3E /* Supporting Files */ = {
+		7AD13E49144F0DA70098E10C /* TestFlight */ = {
 			isa = PBXGroup;
 			children = (
-				7A4DBC7F14491E9900741C3E /* Prefix.pch */,
-				7A4DBC8014491E9900741C3E /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		7A4DBC96144920C400741C3E /* TestFlight */ = {
-			isa = PBXGroup;
-			children = (
-				7A4DBC97144920D600741C3E /* libTestFlight.a */,
-				7A4DBC98144920D600741C3E /* TestFlight.h */,
+				7AD13E4A144F0DA70098E10C /* libTestFlight.a */,
+				7AD13E4B144F0DA70098E10C /* TestFlight.h */,
 			);
 			name = TestFlight;
+			path = libs/TestFlight;
+			sourceTree = "<group>";
+		};
+		7AD13E57144F12610098E10C /* Supporting FIles */ = {
+			isa = PBXGroup;
+			children = (
+				7AD13E51144F0F110098E10C /* main.m */,
+				7AD13E52144F0F110098E10C /* Prefix.pch */,
+			);
+			name = "Supporting FIles";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		7AD13E58144F145A0098E10C /* Generate Assets */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "genSpritesheets.py $(PROJECT_DIR)/tigjam/Resources/Spritesheet\\ Sources/";
+			buildConfigurationList = 7AD13E59144F145A0098E10C /* Build configuration list for PBXLegacyTarget "Generate Assets" */;
+			buildPhases = (
+			);
+			buildToolPath = python;
+			buildWorkingDirectory = "$(PROJECT_DIR)/tigjam/";
+			dependencies = (
+			);
+			name = "Generate Assets";
+			passBuildSettingsInEnvironment = 1;
+			productName = "Generate Assets";
+		};
+/* End PBXLegacyTarget section */
 
 /* Begin PBXNativeTarget section */
 		7A4DBAA814491E9600741C3E /* tigjam */ = {
@@ -1059,6 +1108,7 @@
 			projectRoot = "";
 			targets = (
 				7A4DBAA814491E9600741C3E /* tigjam */,
+				7AD13E58144F145A0098E10C /* Generate Assets */,
 			);
 		};
 /* End PBXProject section */
@@ -1078,6 +1128,10 @@
 				7A4DBACE14491E9700741C3E /* Icon@2x.png in Resources */,
 				7A4DBAD114491E9700741C3E /* iTunesArtwork in Resources */,
 				7A4DBC9014491E9900741C3E /* blocks.png in Resources */,
+				7A32C8D7144F192500FD2C94 /* tigjam-hd.plist in Resources */,
+				7A32C8D8144F192500FD2C94 /* tigjam-hd.pvr.ccz in Resources */,
+				7A32C8D9144F192500FD2C94 /* tigjam.plist in Resources */,
+				7A32C8DA144F192500FD2C94 /* tigjam.pvr.ccz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1217,11 +1271,12 @@
 				7A4DBC7514491E9900741C3E /* b2PulleyJoint.cpp in Sources */,
 				7A4DBC7814491E9900741C3E /* b2RevoluteJoint.cpp in Sources */,
 				7A4DBC7B14491E9900741C3E /* b2WeldJoint.cpp in Sources */,
-				7A4DBC8114491E9900741C3E /* main.m in Sources */,
 				7A4DBC8414491E9900741C3E /* AppDelegate.mm in Sources */,
 				7A4DBC8714491E9900741C3E /* RootViewController.m in Sources */,
 				7A4DBC8A14491E9900741C3E /* HelloWorldLayer.mm in Sources */,
 				7A4DBC8D14491E9900741C3E /* GLES-Render.mm in Sources */,
+				7AD13E53144F0F110098E10C /* main.m in Sources */,
+				7AD13E56144F11AE0098E10C /* GameScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1277,6 +1332,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/tigjam\"",
+					"\"$(SRCROOT)/tigjam/libs/TestFlight\"",
 				);
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1297,12 +1353,61 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/tigjam\"",
+					"\"$(SRCROOT)/tigjam/libs/TestFlight\"",
 				);
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "\"tigjam/libs\"";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		7AD13E5A144F145A0098E10C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		7AD13E5B144F145A0098E10C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -1325,6 +1430,16 @@
 				7A4DBC9514491E9900741C3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7AD13E59144F145A0098E10C /* Build configuration list for PBXLegacyTarget "Generate Assets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7AD13E5A144F145A0098E10C /* Debug */,
+				7AD13E5B144F145A0098E10C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

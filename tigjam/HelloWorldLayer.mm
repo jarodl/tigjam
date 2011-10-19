@@ -215,7 +215,8 @@ enum {
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
 	//Add a new body/atlas sprite at the touched location
-	for( UITouch *touch in touches ) {
+	for( UITouch *touch in touches )
+    {
 		CGPoint location = [touch locationInView: [touch view]];
 		
 		location = [[CCDirector sharedDirector] convertToGL: location];
