@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7A32C8D7144F192500FD2C94 /* tigjam-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A32C8D3144F192400FD2C94 /* tigjam-hd.plist */; };
-		7A32C8D8144F192500FD2C94 /* tigjam-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 7A32C8D4144F192400FD2C94 /* tigjam-hd.pvr.ccz */; };
-		7A32C8D9144F192500FD2C94 /* tigjam.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A32C8D5144F192400FD2C94 /* tigjam.plist */; };
-		7A32C8DA144F192500FD2C94 /* tigjam.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 7A32C8D6144F192400FD2C94 /* tigjam.pvr.ccz */; };
 		7A4DBAAE14491E9700741C3E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4DBAAD14491E9700741C3E /* QuartzCore.framework */; };
 		7A4DBAB014491E9700741C3E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4DBAAF14491E9700741C3E /* OpenGLES.framework */; };
 		7A4DBAB214491E9700741C3E /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4DBAB114491E9700741C3E /* OpenAL.framework */; };
@@ -161,17 +157,30 @@
 		7A4DBC8714491E9900741C3E /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DBC8614491E9900741C3E /* RootViewController.m */; };
 		7A4DBC8A14491E9900741C3E /* HelloWorldLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DBC8914491E9900741C3E /* HelloWorldLayer.mm */; };
 		7A4DBC8D14491E9900741C3E /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DBC8C14491E9900741C3E /* GLES-Render.mm */; };
-		7A4DBC9014491E9900741C3E /* blocks.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A4DBC8F14491E9900741C3E /* blocks.png */; };
+		7AB0F63014520ACE0025AFFA /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0F62F14520ACE0025AFFA /* MainMenuScene.m */; };
+		7AB0F64814520CC90025AFFA /* ImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0F64714520CC90025AFFA /* ImageLoader.m */; };
+		7ABA71B414520DB100B42713 /* FileTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA71B314520DB100B42713 /* FileTools.m */; };
+		7ABA71B914520F3500B42713 /* Environment-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ABA71B514520F3500B42713 /* Environment-hd.plist */; };
+		7ABA71BA14520F3500B42713 /* Environment-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 7ABA71B614520F3500B42713 /* Environment-hd.pvr.ccz */; };
+		7ABA71BB14520F3500B42713 /* Environment.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ABA71B714520F3500B42713 /* Environment.plist */; };
+		7ABA71BC14520F3500B42713 /* Environment.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 7ABA71B814520F3500B42713 /* Environment.pvr.ccz */; };
+		7ABA71C1145213FB00B42713 /* UI-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ABA71BD145213FB00B42713 /* UI-hd.plist */; };
+		7ABA71C2145213FB00B42713 /* UI-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 7ABA71BE145213FB00B42713 /* UI-hd.pvr.ccz */; };
+		7ABA71C3145213FB00B42713 /* UI.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ABA71BF145213FB00B42713 /* UI.plist */; };
+		7ABA71C4145213FB00B42713 /* UI.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 7ABA71C0145213FB00B42713 /* UI.pvr.ccz */; };
+		7ABA71C71452159100B42713 /* Environment.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA71C61452159100B42713 /* Environment.m */; };
+		7ABA71CA1452271700B42713 /* RNG.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA71C91452271700B42713 /* RNG.m */; };
+		7ABA71DB1452277B00B42713 /* SFMT.c in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA71D91452277B00B42713 /* SFMT.c */; };
+		7ABA71DF145227AB00B42713 /* NSMutableArray+shuffle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA71DE145227AB00B42713 /* NSMutableArray+shuffle.m */; };
+		7ABA71E514522D1500B42713 /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA71E414522D1500B42713 /* Button.m */; };
+		7ABA71E814522D3400B42713 /* TouchableNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA71E714522D3200B42713 /* TouchableNode.m */; };
+		7ABA71EB14522D8B00B42713 /* CCNode+setContentSizeFromChildren.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA71EA14522D8B00B42713 /* CCNode+setContentSizeFromChildren.m */; };
 		7AD13E4C144F0DA70098E10C /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD13E4A144F0DA70098E10C /* libTestFlight.a */; };
 		7AD13E53144F0F110098E10C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD13E51144F0F110098E10C /* main.m */; };
 		7AD13E56144F11AE0098E10C /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD13E55144F11AE0098E10C /* GameScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7A32C8D3144F192400FD2C94 /* tigjam-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "tigjam-hd.plist"; sourceTree = "<group>"; };
-		7A32C8D4144F192400FD2C94 /* tigjam-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tigjam-hd.pvr.ccz"; sourceTree = "<group>"; };
-		7A32C8D5144F192400FD2C94 /* tigjam.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tigjam.plist; sourceTree = "<group>"; };
-		7A32C8D6144F192400FD2C94 /* tigjam.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = tigjam.pvr.ccz; sourceTree = "<group>"; };
 		7A4DBAA914491E9700741C3E /* tigjam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tigjam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A4DBAAD14491E9700741C3E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7A4DBAAF14491E9700741C3E /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -479,7 +488,49 @@
 		7A4DBC8914491E9900741C3E /* HelloWorldLayer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HelloWorldLayer.mm; sourceTree = "<group>"; };
 		7A4DBC8B14491E9900741C3E /* GLES-Render.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLES-Render.h"; sourceTree = "<group>"; };
 		7A4DBC8C14491E9900741C3E /* GLES-Render.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GLES-Render.mm"; sourceTree = "<group>"; };
-		7A4DBC8F14491E9900741C3E /* blocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocks.png; path = Resources/blocks.png; sourceTree = "<group>"; };
+		7AB0F62E14520ACE0025AFFA /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
+		7AB0F62F14520ACE0025AFFA /* MainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuScene.m; sourceTree = "<group>"; };
+		7AB0F64614520CC90025AFFA /* ImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageLoader.h; sourceTree = "<group>"; };
+		7AB0F64714520CC90025AFFA /* ImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLoader.m; sourceTree = "<group>"; };
+		7ABA71B114520D8500B42713 /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
+		7ABA71B214520DB100B42713 /* FileTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileTools.h; sourceTree = "<group>"; };
+		7ABA71B314520DB100B42713 /* FileTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileTools.m; sourceTree = "<group>"; };
+		7ABA71B514520F3500B42713 /* Environment-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Environment-hd.plist"; sourceTree = "<group>"; };
+		7ABA71B614520F3500B42713 /* Environment-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Environment-hd.pvr.ccz"; sourceTree = "<group>"; };
+		7ABA71B714520F3500B42713 /* Environment.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Environment.plist; sourceTree = "<group>"; };
+		7ABA71B814520F3500B42713 /* Environment.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = Environment.pvr.ccz; sourceTree = "<group>"; };
+		7ABA71BD145213FB00B42713 /* UI-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "UI-hd.plist"; sourceTree = "<group>"; };
+		7ABA71BE145213FB00B42713 /* UI-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UI-hd.pvr.ccz"; sourceTree = "<group>"; };
+		7ABA71BF145213FB00B42713 /* UI.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UI.plist; sourceTree = "<group>"; };
+		7ABA71C0145213FB00B42713 /* UI.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = UI.pvr.ccz; sourceTree = "<group>"; };
+		7ABA71C51452159100B42713 /* Environment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Environment.h; sourceTree = "<group>"; };
+		7ABA71C61452159100B42713 /* Environment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Environment.m; sourceTree = "<group>"; };
+		7ABA71C81452271700B42713 /* RNG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNG.h; sourceTree = "<group>"; };
+		7ABA71C91452271700B42713 /* RNG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNG.m; sourceTree = "<group>"; };
+		7ABA71CC1452277B00B42713 /* SFMT-alti.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SFMT-alti.h"; path = "libs/SFMT/SFMT-alti.h"; sourceTree = "<group>"; };
+		7ABA71CD1452277B00B42713 /* SFMT-params.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SFMT-params.h"; path = "libs/SFMT/SFMT-params.h"; sourceTree = "<group>"; };
+		7ABA71CE1452277B00B42713 /* SFMT-params607.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SFMT-params607.h"; path = "libs/SFMT/SFMT-params607.h"; sourceTree = "<group>"; };
+		7ABA71CF1452277B00B42713 /* SFMT-params1279.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SFMT-params1279.h"; path = "libs/SFMT/SFMT-params1279.h"; sourceTree = "<group>"; };
+		7ABA71D01452277B00B42713 /* SFMT-params2281.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SFMT-params2281.h"; path = "libs/SFMT/SFMT-params2281.h"; sourceTree = "<group>"; };
+		7ABA71D11452277B00B42713 /* SFMT-params4253.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SFMT-params4253.h"; path = "libs/SFMT/SFMT-params4253.h"; sourceTree = "<group>"; };
+		7ABA71D21452277B00B42713 /* SFMT-params11213.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SFMT-params11213.h"; path = "libs/SFMT/SFMT-params11213.h"; sourceTree = "<group>"; };
+		7ABA71D31452277B00B42713 /* SFMT-params19937.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SFMT-params19937.h"; path = "libs/SFMT/SFMT-params19937.h"; sourceTree = "<group>"; };
+		7ABA71D41452277B00B42713 /* SFMT-params44497.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SFMT-params44497.h"; path = "libs/SFMT/SFMT-params44497.h"; sourceTree = "<group>"; };
+		7ABA71D51452277B00B42713 /* SFMT-params86243.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SFMT-params86243.h"; path = "libs/SFMT/SFMT-params86243.h"; sourceTree = "<group>"; };
+		7ABA71D61452277B00B42713 /* SFMT-params132049.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SFMT-params132049.h"; path = "libs/SFMT/SFMT-params132049.h"; sourceTree = "<group>"; };
+		7ABA71D71452277B00B42713 /* SFMT-params216091.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SFMT-params216091.h"; path = "libs/SFMT/SFMT-params216091.h"; sourceTree = "<group>"; };
+		7ABA71D81452277B00B42713 /* SFMT-sse2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SFMT-sse2.h"; path = "libs/SFMT/SFMT-sse2.h"; sourceTree = "<group>"; };
+		7ABA71D91452277B00B42713 /* SFMT.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = SFMT.c; path = libs/SFMT/SFMT.c; sourceTree = "<group>"; };
+		7ABA71DA1452277B00B42713 /* SFMT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFMT.h; path = libs/SFMT/SFMT.h; sourceTree = "<group>"; };
+		7ABA71DD145227AB00B42713 /* NSMutableArray+shuffle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+shuffle.h"; sourceTree = "<group>"; };
+		7ABA71DE145227AB00B42713 /* NSMutableArray+shuffle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+shuffle.m"; sourceTree = "<group>"; };
+		7ABA71E0145227E200B42713 /* LoadableCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadableCategory.h; sourceTree = "<group>"; };
+		7ABA71E314522D1500B42713 /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
+		7ABA71E414522D1500B42713 /* Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Button.m; sourceTree = "<group>"; };
+		7ABA71E614522D3100B42713 /* TouchableNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchableNode.h; sourceTree = "<group>"; };
+		7ABA71E714522D3200B42713 /* TouchableNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchableNode.m; sourceTree = "<group>"; };
+		7ABA71E914522D8A00B42713 /* CCNode+setContentSizeFromChildren.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCNode+setContentSizeFromChildren.h"; sourceTree = "<group>"; };
+		7ABA71EA14522D8B00B42713 /* CCNode+setContentSizeFromChildren.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCNode+setContentSizeFromChildren.m"; sourceTree = "<group>"; };
 		7AD13E4A144F0DA70098E10C /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		7AD13E4B144F0DA70098E10C /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		7AD13E51144F0F110098E10C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -519,10 +570,14 @@
 		7A32C8D2144F192400FD2C94 /* Spritesheets */ = {
 			isa = PBXGroup;
 			children = (
-				7A32C8D3144F192400FD2C94 /* tigjam-hd.plist */,
-				7A32C8D4144F192400FD2C94 /* tigjam-hd.pvr.ccz */,
-				7A32C8D5144F192400FD2C94 /* tigjam.plist */,
-				7A32C8D6144F192400FD2C94 /* tigjam.pvr.ccz */,
+				7ABA71B514520F3500B42713 /* Environment-hd.plist */,
+				7ABA71B614520F3500B42713 /* Environment-hd.pvr.ccz */,
+				7ABA71B714520F3500B42713 /* Environment.plist */,
+				7ABA71B814520F3500B42713 /* Environment.pvr.ccz */,
+				7ABA71BD145213FB00B42713 /* UI-hd.plist */,
+				7ABA71BE145213FB00B42713 /* UI-hd.pvr.ccz */,
+				7ABA71BF145213FB00B42713 /* UI.plist */,
+				7ABA71C0145213FB00B42713 /* UI.pvr.ccz */,
 			);
 			path = Spritesheets;
 			sourceTree = "<group>";
@@ -562,6 +617,8 @@
 		7A4DBABD14491E9700741C3E /* tigjam */ = {
 			isa = PBXGroup;
 			children = (
+				7ABA71DC1452279B00B42713 /* Categories */,
+				7AB0F64514520CB70025AFFA /* Helpers */,
 				7AD13E57144F12610098E10C /* Supporting FIles */,
 				7A4DBC8214491E9900741C3E /* AppDelegate.h */,
 				7A4DBC8314491E9900741C3E /* AppDelegate.mm */,
@@ -573,6 +630,8 @@
 				7A4DBC8C14491E9900741C3E /* GLES-Render.mm */,
 				7AD13E54144F11AE0098E10C /* GameScene.h */,
 				7AD13E55144F11AE0098E10C /* GameScene.m */,
+				7AB0F62E14520ACE0025AFFA /* MainMenuScene.h */,
+				7AB0F62F14520ACE0025AFFA /* MainMenuScene.m */,
 				7A4DBABE14491E9700741C3E /* Resources */,
 				7A32C8D1144F192400FD2C94 /* Generated */,
 				7A4DBAD214491E9700741C3E /* libs */,
@@ -593,7 +652,6 @@
 				7A4DBACD14491E9700741C3E /* Icon@2x.png */,
 				7A4DBACF14491E9700741C3E /* Info.plist */,
 				7A4DBAD014491E9700741C3E /* iTunesArtwork */,
-				7A4DBC8F14491E9900741C3E /* blocks.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -601,6 +659,7 @@
 		7A4DBAD214491E9700741C3E /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				7ABA71CB1452275E00B42713 /* SFMT */,
 				7AD13E49144F0DA70098E10C /* TestFlight */,
 				7A4DBBC814491E9800741C3E /* LICENSE_cocos2d.txt */,
 				7A4DBBD714491E9800741C3E /* LICENSE_CocosDenshion.txt */,
@@ -1030,6 +1089,60 @@
 			name = Joints;
 			sourceTree = "<group>";
 		};
+		7AB0F64514520CB70025AFFA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7AB0F64614520CC90025AFFA /* ImageLoader.h */,
+				7AB0F64714520CC90025AFFA /* ImageLoader.m */,
+				7ABA71B114520D8500B42713 /* SynthesizeSingleton.h */,
+				7ABA71B214520DB100B42713 /* FileTools.h */,
+				7ABA71B314520DB100B42713 /* FileTools.m */,
+				7ABA71C51452159100B42713 /* Environment.h */,
+				7ABA71C61452159100B42713 /* Environment.m */,
+				7ABA71C81452271700B42713 /* RNG.h */,
+				7ABA71C91452271700B42713 /* RNG.m */,
+				7ABA71E0145227E200B42713 /* LoadableCategory.h */,
+				7ABA71E314522D1500B42713 /* Button.h */,
+				7ABA71E414522D1500B42713 /* Button.m */,
+				7ABA71E614522D3100B42713 /* TouchableNode.h */,
+				7ABA71E714522D3200B42713 /* TouchableNode.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		7ABA71CB1452275E00B42713 /* SFMT */ = {
+			isa = PBXGroup;
+			children = (
+				7ABA71CC1452277B00B42713 /* SFMT-alti.h */,
+				7ABA71CD1452277B00B42713 /* SFMT-params.h */,
+				7ABA71CE1452277B00B42713 /* SFMT-params607.h */,
+				7ABA71CF1452277B00B42713 /* SFMT-params1279.h */,
+				7ABA71D01452277B00B42713 /* SFMT-params2281.h */,
+				7ABA71D11452277B00B42713 /* SFMT-params4253.h */,
+				7ABA71D21452277B00B42713 /* SFMT-params11213.h */,
+				7ABA71D31452277B00B42713 /* SFMT-params19937.h */,
+				7ABA71D41452277B00B42713 /* SFMT-params44497.h */,
+				7ABA71D51452277B00B42713 /* SFMT-params86243.h */,
+				7ABA71D61452277B00B42713 /* SFMT-params132049.h */,
+				7ABA71D71452277B00B42713 /* SFMT-params216091.h */,
+				7ABA71D81452277B00B42713 /* SFMT-sse2.h */,
+				7ABA71D91452277B00B42713 /* SFMT.c */,
+				7ABA71DA1452277B00B42713 /* SFMT.h */,
+			);
+			name = SFMT;
+			sourceTree = "<group>";
+		};
+		7ABA71DC1452279B00B42713 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				7ABA71DD145227AB00B42713 /* NSMutableArray+shuffle.h */,
+				7ABA71DE145227AB00B42713 /* NSMutableArray+shuffle.m */,
+				7ABA71E914522D8A00B42713 /* CCNode+setContentSizeFromChildren.h */,
+				7ABA71EA14522D8B00B42713 /* CCNode+setContentSizeFromChildren.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		7AD13E49144F0DA70098E10C /* TestFlight */ = {
 			isa = PBXGroup;
 			children = (
@@ -1127,11 +1240,14 @@
 				7A4DBACC14491E9700741C3E /* Icon.png in Resources */,
 				7A4DBACE14491E9700741C3E /* Icon@2x.png in Resources */,
 				7A4DBAD114491E9700741C3E /* iTunesArtwork in Resources */,
-				7A4DBC9014491E9900741C3E /* blocks.png in Resources */,
-				7A32C8D7144F192500FD2C94 /* tigjam-hd.plist in Resources */,
-				7A32C8D8144F192500FD2C94 /* tigjam-hd.pvr.ccz in Resources */,
-				7A32C8D9144F192500FD2C94 /* tigjam.plist in Resources */,
-				7A32C8DA144F192500FD2C94 /* tigjam.pvr.ccz in Resources */,
+				7ABA71B914520F3500B42713 /* Environment-hd.plist in Resources */,
+				7ABA71BA14520F3500B42713 /* Environment-hd.pvr.ccz in Resources */,
+				7ABA71BB14520F3500B42713 /* Environment.plist in Resources */,
+				7ABA71BC14520F3500B42713 /* Environment.pvr.ccz in Resources */,
+				7ABA71C1145213FB00B42713 /* UI-hd.plist in Resources */,
+				7ABA71C2145213FB00B42713 /* UI-hd.pvr.ccz in Resources */,
+				7ABA71C3145213FB00B42713 /* UI.plist in Resources */,
+				7ABA71C4145213FB00B42713 /* UI.pvr.ccz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1277,6 +1393,16 @@
 				7A4DBC8D14491E9900741C3E /* GLES-Render.mm in Sources */,
 				7AD13E53144F0F110098E10C /* main.m in Sources */,
 				7AD13E56144F11AE0098E10C /* GameScene.m in Sources */,
+				7AB0F63014520ACE0025AFFA /* MainMenuScene.m in Sources */,
+				7AB0F64814520CC90025AFFA /* ImageLoader.m in Sources */,
+				7ABA71B414520DB100B42713 /* FileTools.m in Sources */,
+				7ABA71C71452159100B42713 /* Environment.m in Sources */,
+				7ABA71CA1452271700B42713 /* RNG.m in Sources */,
+				7ABA71DB1452277B00B42713 /* SFMT.c in Sources */,
+				7ABA71DF145227AB00B42713 /* NSMutableArray+shuffle.m in Sources */,
+				7ABA71E514522D1500B42713 /* Button.m in Sources */,
+				7ABA71E814522D3400B42713 /* TouchableNode.m in Sources */,
+				7ABA71EB14522D8B00B42713 /* CCNode+setContentSizeFromChildren.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

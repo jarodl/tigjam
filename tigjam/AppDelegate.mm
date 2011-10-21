@@ -6,12 +6,10 @@
 //  Copyright MindSnacks 2011. All rights reserved.
 //
 
-#import "cocos2d.h"
-
 #import "AppDelegate.h"
-//#import "HelloWorldLayer.h"
-#import "GameScene.h"
+#import "MainMenuScene.h"
 #import "RootViewController.h"
+#import "Environment.h"
 
 #define kTestFlightToken @"b4ce235c6239b040dc81faa44ad4ad2c_MzQ2NjUyMDExLTEwLTE0IDIyOjA4OjE0LjEyMTg2Nw"
 
@@ -68,7 +66,7 @@
 	if (![director enableRetinaDisplay:YES])
 		CCLOG(@"Retina Display Not supported");
 
-	[director setDeviceOrientation:kCCDeviceOrientationLandscapeLeft];
+	[director setDeviceOrientation:kCCDeviceOrientationPortrait];
 	[director setAnimationInterval:1.0/60];
 	[director setDisplayFPS:YES];
 	
@@ -89,33 +87,38 @@
 	[self removeStartupFlicker];
 	
 	// Run the intro Scene
-	[[CCDirector sharedDirector] runWithScene:[GameScene scene]];
-    
+	[[CCDirector sharedDirector] runWithScene:[MainMenuScene scene]];
+        
     [TestFlight passCheckpoint:@"Application did finish launching"];
 }
 
-
-- (void)applicationWillResignActive:(UIApplication *)application {
+- (void)applicationWillResignActive:(UIApplication *)application
+{
 	[[CCDirector sharedDirector] pause];
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application {
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
 	[[CCDirector sharedDirector] resume];
 }
 
-- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application
+{
 	[[CCDirector sharedDirector] purgeCachedData];
 }
 
--(void) applicationDidEnterBackground:(UIApplication*)application {
+-(void) applicationDidEnterBackground:(UIApplication*)application
+{
 	[[CCDirector sharedDirector] stopAnimation];
 }
 
--(void) applicationWillEnterForeground:(UIApplication*)application {
+-(void) applicationWillEnterForeground:(UIApplication*)application
+{
 	[[CCDirector sharedDirector] startAnimation];
 }
 
-- (void)applicationWillTerminate:(UIApplication *)application {
+- (void)applicationWillTerminate:(UIApplication *)application
+{
 	CCDirector *director = [CCDirector sharedDirector];
 	
 	[[director openGLView] removeFromSuperview];
@@ -128,11 +131,13 @@
     [TestFlight passCheckpoint:@"Application was terminated"];
 }
 
-- (void)applicationSignificantTimeChange:(UIApplication *)application {
+- (void)applicationSignificantTimeChange:(UIApplication *)application
+{
 	[[CCDirector sharedDirector] setNextDeltaTimeZero:YES];
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
 	[[CCDirector sharedDirector] end];
 	[window release];
 	[super dealloc];
