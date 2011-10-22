@@ -11,7 +11,7 @@
 #import "CloudLayer.h"
 #import "WaterLayer.h"
 #import "Environment.h"
-#import "CCGestureRecognizer.h"
+//#import "CCGestureRecognizer.h"
 
 #define kObjectsSpriteSheetName @"Objects"
 #define kBackgroundColor ccc4(177, 235, 255, 255)
@@ -21,7 +21,7 @@
 @property (nonatomic, retain) FrontWaterLayer *frontWater;
 @property (nonatomic, retain) WaterLayer *water;
 @property (nonatomic, retain) CloudLayer *clouds;
-@property (nonatomic, retain) CCGestureRecognizer *gestureRecognizer;
+//@property (nonatomic, retain) CCGestureRecognizer *gestureRecognizer;
 
 - (void)handleTapGesture;
 @end
@@ -31,7 +31,7 @@
 @synthesize water;
 @synthesize frontWater;
 @synthesize clouds;
-@synthesize gestureRecognizer;
+//@synthesize gestureRecognizer;
 
 #pragma mark -
 #pragma mark Set up
@@ -60,12 +60,12 @@
         self.frontWater.position = ccpSub([water frontWavePosition], ccp(0, self.contentSize.height - kWaveOffset));
         [self addChild:frontWater];
         
-        UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] init];
-        self.gestureRecognizer = [CCGestureRecognizer recognizerWithRecognizer:tapGestureRecognizer
-                                                                        target:self
-                                                                        action:@selector(handleTapGesture)];
-        [tapGestureRecognizer release];
-        [self addGestureRecognizer:gestureRecognizer];
+//        UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] init];
+//        self.gestureRecognizer = [CCGestureRecognizer recognizerWithRecognizer:tapGestureRecognizer
+//                                                                        target:self
+//                                                                        action:@selector(handleTapGesture)];
+//        [tapGestureRecognizer release];
+//        [self addGestureRecognizer:gestureRecognizer];
     }
     
     return self;
@@ -77,7 +77,7 @@
 - (void)onExit
 {
     [super onExit];
-    [self removeGestureRecognizer:gestureRecognizer];
+//    [self removeGestureRecognizer:gestureRecognizer];
 }
 
 - (void)dealloc

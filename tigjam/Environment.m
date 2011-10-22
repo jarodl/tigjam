@@ -7,6 +7,7 @@
 //
 
 #import "Environment.h"
+#import "SynthesizeSingleton.h"
 
 @interface Environment ()
 @property (nonatomic, assign) CGRect screenArea;
@@ -19,7 +20,12 @@
 @synthesize screenArea;
 @synthesize screenCenter;
 
-SYNTHESIZE_SINGLETON_FOR_CLASS(Environment);
++ (Environment *)sharedInstance
+{
+    DEFINE_SHARED_INSTANCE_USING_BLOCK(^{
+        return [[self alloc] init];
+    });
+}
 
 - (id)init
 {

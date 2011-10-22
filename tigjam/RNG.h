@@ -6,7 +6,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SynthesizeSingleton.h"
 
 /** Random number generator interface */
 @interface RNG : NSObject
@@ -16,7 +15,7 @@
 /** The current seed value being used */
 @property(nonatomic,readwrite,assign) unsigned int seedValue;
 
-SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(RNG);
++ (id)sharedInstance;
 
 /** Initialize with the specified seed value.
  * This must ONLY be called BEFORE accessing sharedInstance.

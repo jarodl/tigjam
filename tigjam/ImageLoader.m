@@ -8,11 +8,17 @@
 
 #import "ImageLoader.h"
 #import "FileTools.h"
+#import "SynthesizeSingleton.h"
 //#import "ErrorLogger.h"
 
 @implementation ImageLoader
 
-SYNTHESIZE_SINGLETON_FOR_CLASS(ImageLoader);
++ (id)sharedInstance
+{
+    DEFINE_SHARED_INSTANCE_USING_BLOCK(^{
+        return [[self alloc] init];
+    });
+}
 
 - (CCTexture2D *)imageWithFile:(NSString*)filename
 {

@@ -7,12 +7,10 @@
 //
 
 #import "cocos2d.h"
-#import "SynthesizeSingleton.h"
 
 @interface ImageLoader : NSObject
 
-SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(ImageLoader);
-
++ (id)sharedInstance;
 - (CCTexture2D *)imageWithFile:(NSString*)filename;
 - (CCSpriteFrame *)frameWithFile:(NSString*)filename;
 - (void)loadSpriteSheet:(NSString*)filename;

@@ -10,10 +10,9 @@
 
 @interface Environment : NSObject
 
-SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(Environment);
-
 @property (nonatomic, assign) CGSize screenSize;
 
++ (Environment *)sharedInstance;
 - (CGPoint)fromCenterX:(float)x y:(float)y;
 - (CGPoint)fromBottomLeftX:(float)x y:(float)y;
 - (CGPoint)fromBottomRightX:(float) x y:(float)y;

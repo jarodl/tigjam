@@ -8,10 +8,16 @@
 #import "RNG.h"
 #import "SFMT.h"
 #import "NSMutableArray+Shuffle.h"
+#import "SynthesizeSingleton.h"
 
 @implementation RNG
 
-SYNTHESIZE_LESSER_SINGLETON_FOR_CLASS(RNG);
++ (id)sharedInstance
+{
+    DEFINE_SHARED_INSTANCE_USING_BLOCK(^{
+        return [[self alloc] init];
+    });
+}
 
 - (id) init
 {
