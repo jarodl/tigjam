@@ -7,5 +7,16 @@
 //
 
 @interface Blob : CCNode
+{
+    b2World *world;
+    float ptmRatio;
+    b2Body *body;
+    b2Vec2 currentForce;
+}
+
+- (b2Body *)body;
++ (Blob *)blobWithWorld:(b2World *)worldIn ptmRatio:(float)ptmRatioIn position:(CGPoint)positionIn;
+- (id)initWithWorld:(b2World *)worldIn ptmRatio:(float)ptmRatioIn position:(CGPoint)positionIn;
+- (void)updatePhysics:(ccTime)dt;
 
 @end

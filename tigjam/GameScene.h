@@ -7,7 +7,14 @@
 //
 
 #import "CCScene.h"
+#import "GLES-Render.h"
 
 @interface GameScene : CCScene
+{
+    b2World *world;
+    GLESDebugDraw *m_debugDraw;
+    b2MouseJoint *mouseJoint;
+    b2Body *groundBody;
+}
 
 @end
