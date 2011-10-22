@@ -11,7 +11,8 @@
 #import "CloudLayer.h"
 #import "WaterLayer.h"
 #import "Environment.h"
-//#import "CCGestureRecognizer.h"
+#import "Blob.h"
+#import "CCGestureRecognizer.h"
 
 #define kObjectsSpriteSheetName @"Objects"
 #define kBackgroundColor ccc4(177, 235, 255, 255)
@@ -21,9 +22,9 @@
 @property (nonatomic, strong) FrontWaterLayer *frontWater;
 @property (nonatomic, strong) WaterLayer *water;
 @property (nonatomic, strong) CloudLayer *clouds;
-//@property (nonatomic, retain) CCGestureRecognizer *gestureRecognizer;
+@property (nonatomic, strong) CCGestureRecognizer *gestureRecognizer;
 
-- (void)handleTapGesture;
+- (void)handleTapGesture:(UITapGestureRecognizer *)tapGestureRecognizer;
 @end
 
 @implementation GameScene
@@ -31,7 +32,7 @@
 @synthesize water;
 @synthesize frontWater;
 @synthesize clouds;
-//@synthesize gestureRecognizer;
+@synthesize gestureRecognizer;
 
 #pragma mark -
 #pragma mark Set up
@@ -60,12 +61,11 @@
         self.frontWater.position = ccpSub([water frontWavePosition], ccp(0, self.contentSize.height - kWaveOffset));
         [self addChild:frontWater];
         
-        //        UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] init];
-        //        self.gestureRecognizer = [CCGestureRecognizer recognizerWithRecognizer:tapGestureRecognizer
-        //                                                                        target:self
-        //                                                                        action:@selector(handleTapGesture)];
-        //        [tapGestureRecognizer release];
-        //        [self addGestureRecognizer:gestureRecognizer];
+        UITapGestureRecognizer *tapGestureRecognizer = [UITapGestureRecognizer new];
+        self.gestureRecognizer = [CCGestureRecognizer recognizerWithRecognizer:tapGestureRecognizer
+                                                                        target:self
+                                                                        action:@selector(handleTapGesture:)];
+        [self addGestureRecognizer:gestureRecognizer];
     }
     
     return self;
@@ -77,7 +77,7 @@
 - (void)onExit
 {
     [super onExit];
-    //    [self removeGestureRecognizer:gestureRecognizer];
+    [self removeGestureRecognizer:gestureRecognizer];
 }
 
 
@@ -100,9 +100,11 @@
 #pragma mark -
 #pragma mark Handle touch events
 
-- (void)handleTapGesture
+- (void)handleTapGesture:(UITapGestureRecognizer *)tapGestureRecognizer
 {
     NSLog(@"Received tap gesture");
+    Blob *blob = [Blob new];
+    [self addChild:blob];
 }
 
 @end

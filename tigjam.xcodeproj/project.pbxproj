@@ -33,6 +33,15 @@
 		7A4DBC8414491E9900741C3E /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DBC8314491E9900741C3E /* AppDelegate.mm */; };
 		7A4DBC8714491E9900741C3E /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DBC8614491E9900741C3E /* RootViewController.m */; };
 		7A4DBC8D14491E9900741C3E /* GLES-Render.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7A4DBC8C14491E9900741C3E /* GLES-Render.mm */; };
+		7AA2BA781452994400B3059D /* CCGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD06B371452788100393B93 /* CCGestureRecognizer.m */; };
+		7AA2BA791452994400B3059D /* CCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD06B391452788100393B93 /* CCNavigationController.m */; };
+		7AA2BA7A1452994400B3059D /* CCScrollLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD06B3B1452788100393B93 /* CCScrollLayer.m */; };
+		7AA2BA7B1452994400B3059D /* CCTableLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD06B3D1452788100393B93 /* CCTableLayer.m */; };
+		7AA2BA7C1452994400B3059D /* CCTableLayerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD06B3F1452788100393B93 /* CCTableLayerCell.m */; };
+		7AA2BA8D1452A06F00B3059D /* Objects-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AA2BA891452A06F00B3059D /* Objects-hd.plist */; };
+		7AA2BA8E1452A06F00B3059D /* Objects-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 7AA2BA8A1452A06F00B3059D /* Objects-hd.pvr.ccz */; };
+		7AA2BA8F1452A06F00B3059D /* Objects.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AA2BA8B1452A06F00B3059D /* Objects.plist */; };
+		7AA2BA901452A06F00B3059D /* Objects.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 7AA2BA8C1452A06F00B3059D /* Objects.pvr.ccz */; };
 		7AB0F63014520ACE0025AFFA /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0F62F14520ACE0025AFFA /* MainMenuScene.m */; };
 		7AB0F64814520CC90025AFFA /* ImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0F64714520CC90025AFFA /* ImageLoader.m */; };
 		7ABA71B414520DB100B42713 /* FileTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA71B314520DB100B42713 /* FileTools.m */; };
@@ -94,6 +103,10 @@
 		7A4DBC8614491E9900741C3E /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		7A4DBC8B14491E9900741C3E /* GLES-Render.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLES-Render.h"; sourceTree = "<group>"; };
 		7A4DBC8C14491E9900741C3E /* GLES-Render.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GLES-Render.mm"; sourceTree = "<group>"; };
+		7AA2BA891452A06F00B3059D /* Objects-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Objects-hd.plist"; sourceTree = "<group>"; };
+		7AA2BA8A1452A06F00B3059D /* Objects-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Objects-hd.pvr.ccz"; sourceTree = "<group>"; };
+		7AA2BA8B1452A06F00B3059D /* Objects.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Objects.plist; sourceTree = "<group>"; };
+		7AA2BA8C1452A06F00B3059D /* Objects.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = Objects.pvr.ccz; sourceTree = "<group>"; };
 		7AB0F62E14520ACE0025AFFA /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
 		7AB0F62F14520ACE0025AFFA /* MainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuScene.m; sourceTree = "<group>"; };
 		7AB0F64614520CC90025AFFA /* ImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageLoader.h; sourceTree = "<group>"; };
@@ -192,6 +205,10 @@
 		7A32C8D2144F192400FD2C94 /* Spritesheets */ = {
 			isa = PBXGroup;
 			children = (
+				7AA2BA891452A06F00B3059D /* Objects-hd.plist */,
+				7AA2BA8A1452A06F00B3059D /* Objects-hd.pvr.ccz */,
+				7AA2BA8B1452A06F00B3059D /* Objects.plist */,
+				7AA2BA8C1452A06F00B3059D /* Objects.pvr.ccz */,
 				7ABA71B514520F3500B42713 /* Environment-hd.plist */,
 				7ABA71B614520F3500B42713 /* Environment-hd.pvr.ccz */,
 				7ABA71B714520F3500B42713 /* Environment.plist */,
@@ -500,6 +517,10 @@
 				7ABA71C2145213FB00B42713 /* UI-hd.pvr.ccz in Resources */,
 				7ABA71C3145213FB00B42713 /* UI.plist in Resources */,
 				7ABA71C4145213FB00B42713 /* UI.pvr.ccz in Resources */,
+				7AA2BA8D1452A06F00B3059D /* Objects-hd.plist in Resources */,
+				7AA2BA8E1452A06F00B3059D /* Objects-hd.pvr.ccz in Resources */,
+				7AA2BA8F1452A06F00B3059D /* Objects.plist in Resources */,
+				7AA2BA901452A06F00B3059D /* Objects.pvr.ccz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +551,11 @@
 				7A3CA89A1452446F00B2DF6F /* CCActionCyclic.m in Sources */,
 				7A3CA89D1452651100B2DF6F /* CCMoveHorizVert.m in Sources */,
 				7AD06B34145274CF00393B93 /* Blob.m in Sources */,
+				7AA2BA781452994400B3059D /* CCGestureRecognizer.m in Sources */,
+				7AA2BA791452994400B3059D /* CCNavigationController.m in Sources */,
+				7AA2BA7A1452994400B3059D /* CCScrollLayer.m in Sources */,
+				7AA2BA7B1452994400B3059D /* CCTableLayer.m in Sources */,
+				7AA2BA7C1452994400B3059D /* CCTableLayerCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,8 +607,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CLANG_ENABLE_OBJC_ARC = NO;
-				CLANG_WARN_OBJCPP_ARC_ABI = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -607,8 +633,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CLANG_ENABLE_OBJC_ARC = NO;
-				CLANG_WARN_OBJCPP_ARC_ABI = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = tigjam/Prefix.pch;

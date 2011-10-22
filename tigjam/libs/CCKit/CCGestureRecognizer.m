@@ -120,8 +120,7 @@
 		while( n != nil && parent != nil && rslt)
 		{
 			BOOL nodeFound = NO;
-			CCNode *child;
-			CCARRAY_FOREACH(parent.children, child)
+            for (CCNode *child in parent.children)
 			{
 				if( !nodeFound )
 				{
@@ -253,8 +252,8 @@ static char CCNodeGestureRecognizerAdditionsKey;
 		return YES;
 
 	BOOL rslt = NO;
-	CCNode *child;
-	CCARRAY_FOREACH(children_, child)
+
+    for (CCNode *child in children_)
 	{
 		if([child isNodeInTreeTouched:pt])
 		{

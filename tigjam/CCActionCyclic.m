@@ -13,7 +13,7 @@
 
 + (CCActionCyclic*) actionWithAction:(CCActionInterval*) action
 {
-    return [[[self alloc] initWithAction:action] autorelease];
+    return [[self alloc] initWithAction:action];
 }
 
 - (id) initWithAction:(CCActionInterval*) action
@@ -23,7 +23,7 @@
 
 + (CCActionCyclic*) actionWithPhaseShift:(CGFloat) phaseShift action:(CCActionInterval*) action
 {
-    return [[[self alloc] initWithPhaseShift:phaseShift action:action] autorelease];
+    return [[self alloc] initWithPhaseShift:phaseShift action:action];
 }
 
 - (id) initWithPhaseShift:(CGFloat) phaseShift action:(CCActionInterval*) action
@@ -31,21 +31,15 @@
     if((self = [super initWithDuration:action.duration*2.0f]))
     {
         phaseShift_ = phaseShift;
-        action_ = [action retain];
+        action_ = action;
         normalizedPhase_ = phaseShift / action.duration;
     }
     return self;
 }
 
-- (void) dealloc
-{
-    [action_ release];
-    [super dealloc];
-}
-
 -(id) copyWithZone: (NSZone*) zone
 {
-	CCAction *copy = [[[self class] allocWithZone: zone] initWithAction:[[action_ copy] autorelease] ];
+	CCAction *copy = [[[self class] allocWithZone: zone] initWithAction:[action_ copy]];
 	return copy;
 }
 
