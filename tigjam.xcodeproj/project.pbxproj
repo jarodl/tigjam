@@ -179,6 +179,12 @@
 		7ABA71E814522D3400B42713 /* TouchableNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA71E714522D3200B42713 /* TouchableNode.m */; };
 		7ABA71EB14522D8B00B42713 /* CCNode+setContentSizeFromChildren.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA71EA14522D8B00B42713 /* CCNode+setContentSizeFromChildren.m */; };
 		7ABA71EF14523D6400B42713 /* CloudLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA71EE14523D6400B42713 /* CloudLayer.m */; };
+		7AD06B34145274CF00393B93 /* Blob.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD06B33145274CF00393B93 /* Blob.m */; };
+		7AD06B401452788100393B93 /* CCGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD06B371452788100393B93 /* CCGestureRecognizer.m */; };
+		7AD06B411452788100393B93 /* CCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD06B391452788100393B93 /* CCNavigationController.m */; };
+		7AD06B421452788100393B93 /* CCScrollLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD06B3B1452788100393B93 /* CCScrollLayer.m */; };
+		7AD06B431452788100393B93 /* CCTableLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD06B3D1452788100393B93 /* CCTableLayer.m */; };
+		7AD06B441452788100393B93 /* CCTableLayerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD06B3F1452788100393B93 /* CCTableLayerCell.m */; };
 		7AD13E4C144F0DA70098E10C /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD13E4A144F0DA70098E10C /* libTestFlight.a */; };
 		7AD13E53144F0F110098E10C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD13E51144F0F110098E10C /* main.m */; };
 		7AD13E56144F11AE0098E10C /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD13E55144F11AE0098E10C /* GameScene.m */; };
@@ -543,6 +549,18 @@
 		7ABA71EA14522D8B00B42713 /* CCNode+setContentSizeFromChildren.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCNode+setContentSizeFromChildren.m"; sourceTree = "<group>"; };
 		7ABA71ED14523D6400B42713 /* CloudLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CloudLayer.h; sourceTree = "<group>"; };
 		7ABA71EE14523D6400B42713 /* CloudLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloudLayer.m; sourceTree = "<group>"; };
+		7AD06B32145274CF00393B93 /* Blob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Blob.h; sourceTree = "<group>"; };
+		7AD06B33145274CF00393B93 /* Blob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Blob.m; sourceTree = "<group>"; };
+		7AD06B361452788100393B93 /* CCGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCGestureRecognizer.h; sourceTree = "<group>"; };
+		7AD06B371452788100393B93 /* CCGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCGestureRecognizer.m; sourceTree = "<group>"; };
+		7AD06B381452788100393B93 /* CCNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNavigationController.h; sourceTree = "<group>"; };
+		7AD06B391452788100393B93 /* CCNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNavigationController.m; sourceTree = "<group>"; };
+		7AD06B3A1452788100393B93 /* CCScrollLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCScrollLayer.h; sourceTree = "<group>"; };
+		7AD06B3B1452788100393B93 /* CCScrollLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCScrollLayer.m; sourceTree = "<group>"; };
+		7AD06B3C1452788100393B93 /* CCTableLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTableLayer.h; sourceTree = "<group>"; };
+		7AD06B3D1452788100393B93 /* CCTableLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTableLayer.m; sourceTree = "<group>"; };
+		7AD06B3E1452788100393B93 /* CCTableLayerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTableLayerCell.h; sourceTree = "<group>"; };
+		7AD06B3F1452788100393B93 /* CCTableLayerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTableLayerCell.m; sourceTree = "<group>"; };
 		7AD13E4A144F0DA70098E10C /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		7AD13E4B144F0DA70098E10C /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		7AD13E51144F0F110098E10C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -640,6 +658,7 @@
 		7A4DBABD14491E9700741C3E /* tigjam */ = {
 			isa = PBXGroup;
 			children = (
+				7AD06B30145274C200393B93 /* Game Objects */,
 				7A3CA8971452445800B2DF6F /* Cocos2D Extras */,
 				7ABA71EC14523D5300B42713 /* Layers */,
 				7ABA71DC1452279B00B42713 /* Categories */,
@@ -684,6 +703,7 @@
 		7A4DBAD214491E9700741C3E /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				7AD06B351452788100393B93 /* CCKit */,
 				7ABA71CB1452275E00B42713 /* SFMT */,
 				7AD13E49144F0DA70098E10C /* TestFlight */,
 				7A4DBBC814491E9800741C3E /* LICENSE_cocos2d.txt */,
@@ -1179,6 +1199,33 @@
 			name = Layers;
 			sourceTree = "<group>";
 		};
+		7AD06B30145274C200393B93 /* Game Objects */ = {
+			isa = PBXGroup;
+			children = (
+				7AD06B32145274CF00393B93 /* Blob.h */,
+				7AD06B33145274CF00393B93 /* Blob.m */,
+			);
+			name = "Game Objects";
+			sourceTree = "<group>";
+		};
+		7AD06B351452788100393B93 /* CCKit */ = {
+			isa = PBXGroup;
+			children = (
+				7AD06B361452788100393B93 /* CCGestureRecognizer.h */,
+				7AD06B371452788100393B93 /* CCGestureRecognizer.m */,
+				7AD06B381452788100393B93 /* CCNavigationController.h */,
+				7AD06B391452788100393B93 /* CCNavigationController.m */,
+				7AD06B3A1452788100393B93 /* CCScrollLayer.h */,
+				7AD06B3B1452788100393B93 /* CCScrollLayer.m */,
+				7AD06B3C1452788100393B93 /* CCTableLayer.h */,
+				7AD06B3D1452788100393B93 /* CCTableLayer.m */,
+				7AD06B3E1452788100393B93 /* CCTableLayerCell.h */,
+				7AD06B3F1452788100393B93 /* CCTableLayerCell.m */,
+			);
+			name = CCKit;
+			path = libs/CCKit;
+			sourceTree = "<group>";
+		};
 		7AD13E49144F0DA70098E10C /* TestFlight */ = {
 			isa = PBXGroup;
 			children = (
@@ -1443,6 +1490,12 @@
 				7A3CA881145243A600B2DF6F /* WaterLayer.m in Sources */,
 				7A3CA89A1452446F00B2DF6F /* CCActionCyclic.m in Sources */,
 				7A3CA89D1452651100B2DF6F /* CCMoveHorizVert.m in Sources */,
+				7AD06B34145274CF00393B93 /* Blob.m in Sources */,
+				7AD06B401452788100393B93 /* CCGestureRecognizer.m in Sources */,
+				7AD06B411452788100393B93 /* CCNavigationController.m in Sources */,
+				7AD06B421452788100393B93 /* CCScrollLayer.m in Sources */,
+				7AD06B431452788100393B93 /* CCTableLayer.m in Sources */,
+				7AD06B441452788100393B93 /* CCTableLayerCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1494,6 +1547,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = tigjam/Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = tigjam/Resources/Info.plist;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1515,6 +1569,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = tigjam/Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = tigjam/Resources/Info.plist;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
