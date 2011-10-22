@@ -10,8 +10,10 @@
 #import "MainMenuScene.h"
 #import "RootViewController.h"
 #import "Environment.h"
+#import "ImageLoader.h"
 
 #define kTestFlightToken @"b4ce235c6239b040dc81faa44ad4ad2c_MzQ2NjUyMDExLTEwLTE0IDIyOjA4OjE0LjEyMTg2Nw"
+#define kEnvironmentSpritesheetName @"Environment"
 
 @implementation AppDelegate
 
@@ -55,7 +57,7 @@
 	//
 	//
 	EAGLView *glView = [EAGLView viewWithFrame:[window bounds]
-								   pixelFormat:kEAGLColorFormatRGB565	// kEAGLColorFormatRGBA8
+								   pixelFormat:kEAGLColorFormatRGBA8	// kEAGLColorFormatRGBA8
 								   depthFormat:0						// GL_DEPTH_COMPONENT16_OES
 						];
 	
@@ -85,6 +87,8 @@
 
 	// Removes the startup flicker
 	[self removeStartupFlicker];
+    
+    [[ImageLoader sharedInstance] loadSpriteSheet:kEnvironmentSpritesheetName];
 	
 	// Run the intro Scene
 	[[CCDirector sharedDirector] runWithScene:[MainMenuScene scene]];

@@ -113,7 +113,7 @@
 	buttonWasDown = YES;
     if([touchablePortion conformsToProtocol:@protocol(CCRGBAProtocol)])
     {
-        ((id<CCRGBAProtocol>)touchablePortion).color = downColor;
+        [((id<CCRGBAProtocol>)touchablePortion) setColor:downColor];
     }
 }
 
@@ -122,7 +122,7 @@
 	buttonWasDown = NO;
     if([touchablePortion conformsToProtocol:@protocol(CCRGBAProtocol)])
     {
-        ((id<CCRGBAProtocol>)touchablePortion).color = normalColor;
+        [((id<CCRGBAProtocol>)touchablePortion) setColor:normalColor];
     }
 }
 

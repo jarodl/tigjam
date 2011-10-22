@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A3CA881145243A600B2DF6F /* WaterLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3CA880145243A600B2DF6F /* WaterLayer.m */; };
+		7A3CA89A1452446F00B2DF6F /* CCActionCyclic.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3CA8991452446F00B2DF6F /* CCActionCyclic.m */; };
+		7A3CA89D1452651100B2DF6F /* CCMoveHorizVert.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3CA89C1452651100B2DF6F /* CCMoveHorizVert.m */; };
 		7A4DBAAE14491E9700741C3E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4DBAAD14491E9700741C3E /* QuartzCore.framework */; };
 		7A4DBAB014491E9700741C3E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4DBAAF14491E9700741C3E /* OpenGLES.framework */; };
 		7A4DBAB214491E9700741C3E /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4DBAB114491E9700741C3E /* OpenAL.framework */; };
@@ -175,12 +178,19 @@
 		7ABA71E514522D1500B42713 /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA71E414522D1500B42713 /* Button.m */; };
 		7ABA71E814522D3400B42713 /* TouchableNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA71E714522D3200B42713 /* TouchableNode.m */; };
 		7ABA71EB14522D8B00B42713 /* CCNode+setContentSizeFromChildren.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA71EA14522D8B00B42713 /* CCNode+setContentSizeFromChildren.m */; };
+		7ABA71EF14523D6400B42713 /* CloudLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA71EE14523D6400B42713 /* CloudLayer.m */; };
 		7AD13E4C144F0DA70098E10C /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD13E4A144F0DA70098E10C /* libTestFlight.a */; };
 		7AD13E53144F0F110098E10C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD13E51144F0F110098E10C /* main.m */; };
 		7AD13E56144F11AE0098E10C /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD13E55144F11AE0098E10C /* GameScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A3CA87F145243A600B2DF6F /* WaterLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterLayer.h; sourceTree = "<group>"; };
+		7A3CA880145243A600B2DF6F /* WaterLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterLayer.m; sourceTree = "<group>"; };
+		7A3CA8981452446F00B2DF6F /* CCActionCyclic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCActionCyclic.h; sourceTree = "<group>"; };
+		7A3CA8991452446F00B2DF6F /* CCActionCyclic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCActionCyclic.m; sourceTree = "<group>"; };
+		7A3CA89B1452651100B2DF6F /* CCMoveHorizVert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMoveHorizVert.h; sourceTree = "<group>"; };
+		7A3CA89C1452651100B2DF6F /* CCMoveHorizVert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMoveHorizVert.m; sourceTree = "<group>"; };
 		7A4DBAA914491E9700741C3E /* tigjam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tigjam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A4DBAAD14491E9700741C3E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7A4DBAAF14491E9700741C3E /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -531,6 +541,8 @@
 		7ABA71E714522D3200B42713 /* TouchableNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchableNode.m; sourceTree = "<group>"; };
 		7ABA71E914522D8A00B42713 /* CCNode+setContentSizeFromChildren.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCNode+setContentSizeFromChildren.h"; sourceTree = "<group>"; };
 		7ABA71EA14522D8B00B42713 /* CCNode+setContentSizeFromChildren.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCNode+setContentSizeFromChildren.m"; sourceTree = "<group>"; };
+		7ABA71ED14523D6400B42713 /* CloudLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CloudLayer.h; sourceTree = "<group>"; };
+		7ABA71EE14523D6400B42713 /* CloudLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloudLayer.m; sourceTree = "<group>"; };
 		7AD13E4A144F0DA70098E10C /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		7AD13E4B144F0DA70098E10C /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		7AD13E51144F0F110098E10C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -582,6 +594,17 @@
 			path = Spritesheets;
 			sourceTree = "<group>";
 		};
+		7A3CA8971452445800B2DF6F /* Cocos2D Extras */ = {
+			isa = PBXGroup;
+			children = (
+				7A3CA8981452446F00B2DF6F /* CCActionCyclic.h */,
+				7A3CA8991452446F00B2DF6F /* CCActionCyclic.m */,
+				7A3CA89B1452651100B2DF6F /* CCMoveHorizVert.h */,
+				7A3CA89C1452651100B2DF6F /* CCMoveHorizVert.m */,
+			);
+			name = "Cocos2D Extras";
+			sourceTree = "<group>";
+		};
 		7A4DBA9E14491E9600741C3E = {
 			isa = PBXGroup;
 			children = (
@@ -617,6 +640,8 @@
 		7A4DBABD14491E9700741C3E /* tigjam */ = {
 			isa = PBXGroup;
 			children = (
+				7A3CA8971452445800B2DF6F /* Cocos2D Extras */,
+				7ABA71EC14523D5300B42713 /* Layers */,
 				7ABA71DC1452279B00B42713 /* Categories */,
 				7AB0F64514520CB70025AFFA /* Helpers */,
 				7AD13E57144F12610098E10C /* Supporting FIles */,
@@ -1143,6 +1168,17 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		7ABA71EC14523D5300B42713 /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+				7ABA71ED14523D6400B42713 /* CloudLayer.h */,
+				7ABA71EE14523D6400B42713 /* CloudLayer.m */,
+				7A3CA87F145243A600B2DF6F /* WaterLayer.h */,
+				7A3CA880145243A600B2DF6F /* WaterLayer.m */,
+			);
+			name = Layers;
+			sourceTree = "<group>";
+		};
 		7AD13E49144F0DA70098E10C /* TestFlight */ = {
 			isa = PBXGroup;
 			children = (
@@ -1403,6 +1439,10 @@
 				7ABA71E514522D1500B42713 /* Button.m in Sources */,
 				7ABA71E814522D3400B42713 /* TouchableNode.m in Sources */,
 				7ABA71EB14522D8B00B42713 /* CCNode+setContentSizeFromChildren.m in Sources */,
+				7ABA71EF14523D6400B42713 /* CloudLayer.m in Sources */,
+				7A3CA881145243A600B2DF6F /* WaterLayer.m in Sources */,
+				7A3CA89A1452446F00B2DF6F /* CCActionCyclic.m in Sources */,
+				7A3CA89D1452651100B2DF6F /* CCMoveHorizVert.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
