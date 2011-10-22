@@ -22,7 +22,6 @@
 - (void) dealloc
 {
 	[self unregisterWithTouchDispatcher];
-	
 }
 
 -(void) registerWithTouchDispatcher

@@ -10,6 +10,4 @@
 
 @interface GameScene : CCScene
 
-+ (CCScene *)scene;
-
 @end

@@ -91,7 +91,7 @@
     [[ImageLoader sharedInstance] loadSpriteSheet:kEnvironmentSpritesheetName];
 	
 	// Run the intro Scene
-	[[CCDirector sharedDirector] runWithScene:[MainMenuScene scene]];
+	[[CCDirector sharedDirector] runWithScene:[MainMenuScene new]];
     
     [TestFlight passCheckpoint:@"Application did finish launching"];
 }

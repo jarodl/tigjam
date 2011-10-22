@@ -15,11 +15,6 @@
 
 @implementation Blob
 
-+ (Blob *)blob
-{
-    return [[self alloc] init];
-}
-
 - (id)init
 {
     if ((self = [super init]))
@@ -28,7 +23,7 @@
         CCSprite *blobSprite = [CCSprite spriteWithSpriteFrameName:[NSString stringWithFormat:kBlobSpriteFrameNameFormat, i]];
         [self addChild:blobSprite];
         [self setContentSizeFromChildren];
-        self.scale = 0.25f;
+//        self.scale = 0.25f;
     }
     
     return self;

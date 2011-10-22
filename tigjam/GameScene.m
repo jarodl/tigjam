@@ -17,14 +17,18 @@
 #define kObjectsSpriteSheetName @"Objects"
 #define kBackgroundColor ccc4(177, 235, 255, 255)
 #define kWaveOffset 75.0f
+#define kGesturePositionChangeLimit 10.0f
 
 @interface GameScene ()
 @property (nonatomic, strong) FrontWaterLayer *frontWater;
 @property (nonatomic, strong) WaterLayer *water;
 @property (nonatomic, strong) CloudLayer *clouds;
 @property (nonatomic, strong) CCGestureRecognizer *gestureRecognizer;
+@property (nonatomic, strong) CCGestureRecognizer *rotationRecognizer;
+@property (nonatomic, strong) Blob *currentBlob;
 
-- (void)handleTapGesture:(UITapGestureRecognizer *)tapGestureRecognizer;
+- (void)handlePinchGesture:(UIPinchGestureRecognizer *)pinchGestureRecognizer;
+- (void)handleRotationGesture:(UIRotationGestureRecognizer *)rotationGesture;
 @end
 
 @implementation GameScene
@@ -33,14 +37,11 @@
 @synthesize frontWater;
 @synthesize clouds;
 @synthesize gestureRecognizer;
+@synthesize rotationRecognizer;
+@synthesize currentBlob;
 
 #pragma mark -
 #pragma mark Set up
-
-+ (CCScene *)scene
-{
-    return [[self alloc] init];
-}
 
 - (id)init
 {
@@ -61,11 +62,16 @@
         self.frontWater.position = ccpSub([water frontWavePosition], ccp(0, self.contentSize.height - kWaveOffset));
         [self addChild:frontWater];
         
-        UITapGestureRecognizer *tapGestureRecognizer = [UITapGestureRecognizer new];
-        self.gestureRecognizer = [CCGestureRecognizer recognizerWithRecognizer:tapGestureRecognizer
+        UIPinchGestureRecognizer *pinchGestureRecognizer = [UIPinchGestureRecognizer new];
+        self.gestureRecognizer = [CCGestureRecognizer recognizerWithRecognizer:pinchGestureRecognizer
                                                                         target:self
-                                                                        action:@selector(handleTapGesture:)];
+                                                                        action:@selector(handlePinchGesture:)];
+        UIRotationGestureRecognizer *rotationGestureRecognizer = [UIRotationGestureRecognizer new];
+        self.rotationRecognizer = [CCGestureRecognizer recognizerWithRecognizer:rotationGestureRecognizer
+                                                                         target:self
+                                                                         action:@selector(handleRotationGesture:)];
         [self addGestureRecognizer:gestureRecognizer];
+        [self addGestureRecognizer:rotationRecognizer];
     }
     
     return self;
@@ -78,6 +84,7 @@
 {
     [super onExit];
     [self removeGestureRecognizer:gestureRecognizer];
+    [self removeGestureRecognizer:rotationRecognizer];
 }
 
 
@@ -100,11 +107,45 @@
 #pragma mark -
 #pragma mark Handle touch events
 
-- (void)handleTapGesture:(UITapGestureRecognizer *)tapGestureRecognizer
+- (void)handlePinchGesture:(UIPinchGestureRecognizer *)pinchGestureRecognizer
 {
-    NSLog(@"Received tap gesture");
-    Blob *blob = [Blob new];
-    [self addChild:blob];
+    CGPoint gestureLocation = [[CCDirector sharedDirector] convertToGL:[pinchGestureRecognizer locationInView:pinchGestureRecognizer.view]];
+    switch (pinchGestureRecognizer.state)
+    {
+        case UIGestureRecognizerStateBegan:
+            self.currentBlob = [Blob new];
+            self.currentBlob.position = gestureLocation;
+            self.currentBlob.scale = pinchGestureRecognizer.scale / 5.0f;
+            [self addChild:currentBlob];
+            break;
+        case UIGestureRecognizerStateChanged:
+            self.currentBlob.scale = pinchGestureRecognizer.scale / 5.0f;
+            if (ccpDistance(gestureLocation, currentBlob.position) < kGesturePositionChangeLimit)
+                self.currentBlob.position = gestureLocation;
+            break;
+        case UIGestureRecognizerStateEnded:
+            self.currentBlob = nil;
+            break;
+        case UIGestureRecognizerStateFailed:
+        case UIGestureRecognizerStateCancelled:
+            [self.currentBlob removeFromParentAndCleanup:YES];
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)handleRotationGesture:(UIRotationGestureRecognizer *)rotationGesture
+{
+    switch (rotationGesture.state)
+    {
+        case UIGestureRecognizerStateBegan:
+        case UIGestureRecognizerStateChanged:
+            self.currentBlob.rotation = CC_RADIANS_TO_DEGREES(rotationGesture.rotation);
+            break;
+        default:
+            break;
+    }
 }
 
 @end

@@ -8,6 +8,4 @@
 
 @interface Blob : CCNode
 
-+ (Blob *)blob;
-
 @end

@@ -81,7 +81,7 @@
 - (void)startGamingScene
 {
     [TestFlight passCheckpoint:@"Tapped play button"];
-    [[CCDirector sharedDirector] replaceScene:[GameScene scene]];
+    [[CCDirector sharedDirector] replaceScene:[GameScene new]];
 }
 
 #pragma mark -
