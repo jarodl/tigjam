@@ -46,7 +46,6 @@
         boxShapeDef.friction = 0.1f;
         boxShapeDef.restitution = 0.1f;
         body->CreateFixture(&boxShapeDef);
-//        body->SetLinearVelocity(b2Vec2(0, 1.0f));
     }
     
     return self;
@@ -60,10 +59,36 @@
     return body;
 }
 
+- (void)setRotation:(float)rotationIn
+{
+    [super setRotation:rotationIn];
+    body->SetTransform(body->GetPosition(), CC_DEGREES_TO_RADIANS(-rotationIn));
+}
+
+- (void)setScale:(float)scaleIn
+{
+    [super setScale:scaleIn];
+    b2BodyDef bodyDef;
+    bodyDef.type = b2_dynamicBody;
+    bodyDef.position.Set(body->GetPosition().x, body->GetPosition().y);
+    bodyDef.userData = body->GetUserData();
+    bodyDef.angle = body->GetAngle();
+    world->DestroyBody(body);
+    body = world->CreateBody(&bodyDef);
+    b2PolygonShape boxShape;
+    boxShape.SetAsBox((self.contentSize.width * 0.5 * scaleIn) / ptmRatio,
+                      (self.contentSize.height * 0.5 * scaleIn) / ptmRatio);
+    b2FixtureDef boxShapeDef;
+    boxShapeDef.shape = &boxShape;
+    boxShapeDef.density = 1.0f;
+    boxShapeDef.friction = 0.1f;
+    boxShapeDef.restitution = 0.1f;
+    body->CreateFixture(&boxShapeDef);
+}
+
 - (void)updatePhysics:(ccTime)dt
 {
     self.position = CGPointMake(body->GetPosition().x * ptmRatio, body->GetPosition().y * ptmRatio);
-//    body->ApplyForce(currentForce, body->GetWorldCenter());
 }
 
 @end

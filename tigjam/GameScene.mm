@@ -19,6 +19,7 @@
 #define kWaveOffset 75.0f
 #define kGesturePositionChangeLimit 10.0f
 #define PTM_RATIO 50.0f
+#define kFrontZIndex 5
 
 @interface GameScene ()
 @property (nonatomic, strong) FrontWaterLayer *frontWater;
@@ -62,7 +63,7 @@
         
         self.frontWater = [FrontWaterLayer node];
         self.frontWater.position = ccpSub([water frontWavePosition], ccp(0, self.contentSize.height - kWaveOffset));
-        [self addChild:frontWater];
+        [self addChild:frontWater z:kFrontZIndex];
         
         UIPinchGestureRecognizer *pinchGestureRecognizer = [UIPinchGestureRecognizer new];
         self.gestureRecognizer = [CCGestureRecognizer recognizerWithRecognizer:pinchGestureRecognizer
@@ -77,14 +78,19 @@
         
         // Physics
         b2Vec2 gravity;
-        gravity.Set(0.0f, 0.0f);
+        gravity.Set(0.0f, -1.0f);
         bool doSleep = true;
         world = new b2World(gravity, doSleep);
         world->SetContinuousPhysics(true);
-        m_debugDraw = new GLESDebugDraw(PTM_RATIO);
-        world->SetDebugDraw(m_debugDraw);
+        m_debugDraw = new GLESDebugDraw(PTM_RATIO * CC_CONTENT_SCALE_FACTOR());
         uint32 flags = 0;
+        flags += b2DebugDraw::e_shapeBit;
+        flags += b2DebugDraw::e_jointBit;
+        flags += b2DebugDraw::e_aabbBit;
+        flags += b2DebugDraw::e_pairBit;
+        flags += b2DebugDraw::e_centerOfMassBit;
         m_debugDraw->SetFlags(flags);
+        world->SetDebugDraw(m_debugDraw);
         // ground body
         b2BodyDef groundBodyDef;
         groundBodyDef.position.Set(0, 0);
@@ -163,16 +169,22 @@
                 self.currentBlob.position = gestureLocation;
             break;
         case UIGestureRecognizerStateEnded:
-            world->DestroyJoint(mouseJoint);
-            mouseJoint = NULL;
+            if (mouseJoint)
+            {
+//                world->DestroyJoint(mouseJoint);
+                mouseJoint = NULL;
+            }
             self.currentBlob = nil;
             break;
         case UIGestureRecognizerStateFailed:
         case UIGestureRecognizerStateCancelled:
             [self.currentBlob removeFromParentAndCleanup:YES];
             self.currentBlob = nil;
-            world->DestroyJoint(mouseJoint);
-            mouseJoint = NULL;
+            if (mouseJoint)
+            {
+                world->DestroyJoint(mouseJoint);
+                mouseJoint = NULL;
+            }
             break;
         default:
             break;
@@ -211,6 +223,21 @@
             [blob updatePhysics:dt];
         }
     }
+}
+
+#pragma mark -
+#pragma mark Debug draw
+
+- (void)draw
+{
+    [super draw];
+    glDisable(GL_TEXTURE_2D);
+    glDisableClientState(GL_COLOR_ARRAY);
+    glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+    world->DrawDebugData();
+    glEnable(GL_TEXTURE_2D);
+    glEnableClientState(GL_COLOR_ARRAY);
+    glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 }
 
 - (void)dealloc
