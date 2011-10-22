@@ -18,13 +18,13 @@
 	BOOL touchInProgress;
 	BOOL buttonWasDown;
 	
-	id target;
+	id __unsafe_unretained target;
 	SEL selector;
 }
 /** The portion of this button that is actually touchable */
-@property(nonatomic,readwrite,retain) CCNode* touchablePortion;
+@property(nonatomic,readwrite,strong) CCNode* touchablePortion;
 
-@property(readwrite,assign) id target;
+@property(readwrite,unsafe_unretained) id target;
 @property(readwrite,assign) SEL selector;
 @property (nonatomic, assign) ccColor3B normalColor;
 @property (nonatomic, assign) ccColor3B downColor;

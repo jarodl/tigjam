@@ -17,7 +17,7 @@
 
 + (Blob *)blob
 {
-    return [[[self alloc] init] autorelease];
+    return [[self alloc] init];
 }
 
 - (id)init
@@ -34,9 +34,5 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [super dealloc];
-}
 
 @end

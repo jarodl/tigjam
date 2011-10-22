@@ -21,8 +21,8 @@
 #define kButtonMargin 15.0f
 
 @interface MainMenuScene ()
-@property (nonatomic, retain) Button *playButton;
-@property (nonatomic, retain) Button *settingsButton;
+@property (nonatomic, strong) Button *playButton;
+@property (nonatomic, strong) Button *settingsButton;
 
 - (void)startSettingsScene;
 - (void)startGamingScene;
@@ -35,7 +35,7 @@
 
 + (CCScene *)scene
 {
-    return [[[self alloc] init] autorelease];
+    return [[self alloc] init];
 }
 
 - (id)init
@@ -43,7 +43,7 @@
     if ((self = [super init]))
     {
         [[ImageLoader sharedInstance] loadSpriteSheet:kUISpritesheetName];
-
+        
         // background elements
         CCLayerColor *backgroundLayer = [CCLayerColor layerWithColor:kBackgroundColor];
         [self addChild:backgroundLayer];
@@ -51,7 +51,7 @@
         CloudLayer *clouds = [CloudLayer node];
         [self addChild:clouds];
         [clouds startAnimations];
-               
+        
         CCSprite *gameTitle = [CCSprite spriteWithSpriteFrameName:kGameTitleSpriteFrameName];
         gameTitle.position = [[Environment sharedInstance] fromTopMiddleX:0.0f y:100.0f];
         [self addChild:gameTitle];
@@ -87,11 +87,5 @@
 #pragma mark -
 #pragma mark Clean up
 
-- (void)dealloc
-{
-    self.playButton = nil;
-    self.settingsButton = nil;
-    [super dealloc];
-}
 
 @end

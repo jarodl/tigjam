@@ -14,7 +14,7 @@
 #define kNumberOfClouds 5
 
 @interface CloudLayer ()
-@property (nonatomic, retain) NSMutableArray *clouds;
+@property (nonatomic, strong) NSMutableArray *clouds;
 
 - (CCFiniteTimeAction *)movingCloudAction;
 @end
@@ -28,7 +28,7 @@
     if ((self = [super init]))
     {
         self.contentSize = [Environment sharedInstance].screenSize;
-
+        
         NSArray *cloudPositions = [NSArray arrayWithObjects:
                                    [NSValue valueWithCGPoint:[[Environment sharedInstance] fromTopLeftX:75.0f y:25.0f]],
                                    [NSValue valueWithCGPoint:[[Environment sharedInstance] fromTopRightX:35.0f y:100.0f]],
@@ -52,11 +52,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    self.clouds = nil;
-    [super dealloc];
-}
 
 #pragma mark -
 #pragma mark Animations

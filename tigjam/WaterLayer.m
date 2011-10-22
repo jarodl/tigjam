@@ -21,8 +21,8 @@
 #define kFrontWaveOpacity 150
 
 @interface WaterLayer ()
-@property (nonatomic, retain) NSMutableArray *waves;
-@property (nonatomic, retain) CCLayerColor *water;
+@property (nonatomic, strong) NSMutableArray *waves;
+@property (nonatomic, strong) CCLayerColor *water;
 
 - (CCActionInterval *)makeBaseWaveActionWithPhaseShift:(CGFloat)phaseShift;
 @end
@@ -98,12 +98,6 @@
               nil]]];
 }
 
-- (void)dealloc
-{
-    self.waves = nil;
-    self.water = nil;
-    [super dealloc];
-}
 
 @end
 

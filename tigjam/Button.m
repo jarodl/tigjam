@@ -24,7 +24,7 @@
 
 + (id) buttonWithTouchablePortion:(CCNode*) node target:(id) target selector:(SEL) selector
 {
-	return [[[self alloc] initWithTouchablePortion:node target:target selector:selector] autorelease];
+	return [[self alloc] initWithTouchablePortion:node target:target selector:selector];
 }
 
 - (id) initWithTouchablePortion:(CCNode*) node target:(id) targetIn selector:(SEL) selectorIn

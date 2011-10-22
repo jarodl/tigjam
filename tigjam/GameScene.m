@@ -18,9 +18,9 @@
 #define kWaveOffset 75.0f
 
 @interface GameScene ()
-@property (nonatomic, retain) FrontWaterLayer *frontWater;
-@property (nonatomic, retain) WaterLayer *water;
-@property (nonatomic, retain) CloudLayer *clouds;
+@property (nonatomic, strong) FrontWaterLayer *frontWater;
+@property (nonatomic, strong) WaterLayer *water;
+@property (nonatomic, strong) CloudLayer *clouds;
 //@property (nonatomic, retain) CCGestureRecognizer *gestureRecognizer;
 
 - (void)handleTapGesture;
@@ -38,7 +38,7 @@
 
 + (CCScene *)scene
 {
-    return [[[self alloc] init] autorelease];
+    return [[self alloc] init];
 }
 
 - (id)init
@@ -60,12 +60,12 @@
         self.frontWater.position = ccpSub([water frontWavePosition], ccp(0, self.contentSize.height - kWaveOffset));
         [self addChild:frontWater];
         
-//        UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] init];
-//        self.gestureRecognizer = [CCGestureRecognizer recognizerWithRecognizer:tapGestureRecognizer
-//                                                                        target:self
-//                                                                        action:@selector(handleTapGesture)];
-//        [tapGestureRecognizer release];
-//        [self addGestureRecognizer:gestureRecognizer];
+        //        UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] init];
+        //        self.gestureRecognizer = [CCGestureRecognizer recognizerWithRecognizer:tapGestureRecognizer
+        //                                                                        target:self
+        //                                                                        action:@selector(handleTapGesture)];
+        //        [tapGestureRecognizer release];
+        //        [self addGestureRecognizer:gestureRecognizer];
     }
     
     return self;
@@ -77,15 +77,9 @@
 - (void)onExit
 {
     [super onExit];
-//    [self removeGestureRecognizer:gestureRecognizer];
+    //    [self removeGestureRecognizer:gestureRecognizer];
 }
 
-- (void)dealloc
-{
-    self.clouds = nil;
-    self.water = nil;
-    [super dealloc];
-}
 
 #pragma mark -
 #pragma mark Update

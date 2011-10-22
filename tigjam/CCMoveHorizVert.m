@@ -17,7 +17,7 @@
 @implementation CCMoveHorizontalTo
 +(id) actionWithDuration:(ccTime)t horizontalPosition:(CGFloat)p
 {	
-	return [[[self alloc] initWithDuration:t horizontalPosition:p ] autorelease];
+	return [[self alloc] initWithDuration:t horizontalPosition:p ];
 }
 
 -(id) initWithDuration: (ccTime) t horizontalPosition:(CGFloat) p
@@ -56,7 +56,7 @@
 @implementation CCMoveHorizontalBy
 +(id) actionWithDuration: (ccTime) t horizontalPosition:(CGFloat) p
 {	
-	return [[[self alloc] initWithDuration:t horizontalPosition:p ] autorelease];
+	return [[self alloc] initWithDuration:t horizontalPosition:p ];
 }
 
 -(id) initWithDuration: (ccTime) t horizontalPosition:(CGFloat) p
@@ -97,7 +97,7 @@
 @implementation CCMoveVerticalTo
 +(id) actionWithDuration:(ccTime)t verticalPosition:(CGFloat)p
 {	
-	return [[[self alloc] initWithDuration:t verticalPosition:p ] autorelease];
+	return [[self alloc] initWithDuration:t verticalPosition:p ];
 }
 
 -(id) initWithDuration: (ccTime) t verticalPosition:(CGFloat) p
@@ -136,7 +136,7 @@
 @implementation CCMoveVerticalBy
 +(id) actionWithDuration: (ccTime) t verticalPosition:(CGFloat) p
 {	
-	return [[[self alloc] initWithDuration:t verticalPosition:p ] autorelease];
+	return [[self alloc] initWithDuration:t verticalPosition:p ];
 }
 
 -(id) initWithDuration: (ccTime) t verticalPosition:(CGFloat) p

@@ -67,7 +67,7 @@
 	// Enables High Res mode (Retina Display) on iPhone 4 and maintains low res on all other devices
 	if (![director enableRetinaDisplay:YES])
 		CCLOG(@"Retina Display Not supported");
-
+    
 	[director setDeviceOrientation:kCCDeviceOrientationPortrait];
 	[director setAnimationInterval:1.0/60];
 	[director setDisplayFPS:YES];
@@ -84,7 +84,7 @@
 	// It can be RGBA8888, RGBA4444, RGB5_A1, RGB565
 	// You can change anytime.
 	[CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA8888];
-
+    
 	// Removes the startup flicker
 	[self removeStartupFlicker];
     
@@ -92,7 +92,7 @@
 	
 	// Run the intro Scene
 	[[CCDirector sharedDirector] runWithScene:[MainMenuScene scene]];
-        
+    
     [TestFlight passCheckpoint:@"Application did finish launching"];
 }
 
@@ -127,9 +127,7 @@
 	
 	[[director openGLView] removeFromSuperview];
 	
-	[viewController release];
 	
-	[window release];
 	
 	[director end];
     [TestFlight passCheckpoint:@"Application was terminated"];
@@ -143,8 +141,6 @@
 - (void)dealloc
 {
 	[[CCDirector sharedDirector] end];
-	[window release];
-	[super dealloc];
 }
 
 @end
