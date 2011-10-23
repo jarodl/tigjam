@@ -109,8 +109,8 @@
 {
     if ((self = [super init]))
     {
-        self.contentSize = [Environment sharedInstance].screenSize;
         self.anchorPoint = ccp(0.5, 1.0f);
+        self.contentSize = [Environment sharedInstance].screenSize;
         CCSprite *frontWave = [CCSprite spriteWithSpriteFrameName:[NSString stringWithFormat:kWaveFrameName, 0]];
         frontWave.opacity = kFrontWaveOpacity;
         frontWave.position = [[Environment sharedInstance] fromTopMiddleX:0.0f y:frontWave.contentSize.height / 2];
@@ -122,6 +122,7 @@
                                                                 kFrontWaterColor.g,
                                                                 kFrontWaterColor.b,
                                                                 kFrontWaveOpacity)];
+        water.contentSize = CGSizeMake(self.contentSize.width * 2, self.contentSize.height);
         water.position = ccpSub(frontWave.position, ccp(self.contentSize.width / 2,
                                                         (frontWave.contentSize.height / 2) + self.contentSize.height));
         [self addChild:water];
