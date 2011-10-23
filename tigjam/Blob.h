@@ -6,20 +6,13 @@
 //  Copyright (c) 2011 MindSnacks. All rights reserved.
 //
 
-@interface Blob : CCNode
-{
-    b2World *world;
-    float ptmRatio;
-    b2Body *body;
-    b2Vec2 currentForce;
-}
+#import "Box2DNode.h"
+
+@interface Blob : Box2DNode
 
 @property (nonatomic, assign) BOOL reachedWater;
 
-- (b2Body *)body;
 + (Blob *)blobWithWorld:(b2World *)worldIn ptmRatio:(float)ptmRatioIn position:(CGPoint)positionIn;
-- (id)initWithWorld:(b2World *)worldIn ptmRatio:(float)ptmRatioIn position:(CGPoint)positionIn;
-- (void)updatePhysics:(ccTime)dt;
 - (void)setBodyPosition:(CGPoint)position;
 
 @end

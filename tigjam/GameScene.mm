@@ -12,6 +12,7 @@
 #import "WaterLayer.h"
 #import "Environment.h"
 #import "Blob.h"
+#import "Enemy.h"
 #import "CCGestureRecognizer.h"
 #import "CCMoveHorizVert.h"
 
@@ -21,6 +22,7 @@
 #define kGesturePositionChangeLimit 10.0f
 #define PTM_RATIO 50.0f
 #define kFrontZIndex 5
+#define kWorldGravity -7.0f
 
 @interface GameScene ()
 @property (nonatomic, strong) FrontWaterLayer *frontWater;
@@ -33,6 +35,7 @@
 - (void)handlePinchGesture:(UIPinchGestureRecognizer *)pinchGestureRecognizer;
 - (void)handleRotationGesture:(UIRotationGestureRecognizer *)rotationGesture;
 - (void)riseWaterWithAmount:(float)amount;
+- (void)addEnemy;
 @end
 
 @implementation GameScene
@@ -80,7 +83,7 @@
         
         // Physics
         b2Vec2 gravity;
-        gravity.Set(0.0f, -1.0f);
+        gravity.Set(0.0f, kWorldGravity);
         bool doSleep = true;
         world = new b2World(gravity, doSleep);
         world->SetContinuousPhysics(true);
@@ -124,6 +127,15 @@
     [self removeGestureRecognizer:rotationRecognizer];
 }
 
+#pragma mark -
+#pragma mark Enemy
+
+- (void)addEnemy
+{
+    CGPoint startingPosition = [[Environment sharedInstance] fromTopMiddleX:0.0f y:10.0f];
+    Enemy *enemy = [Enemy enemyWithWorld:world ptmRatio:PTM_RATIO position:startingPosition];
+    [self addChild:enemy];
+}
 
 #pragma mark -
 #pragma mark Update
@@ -135,6 +147,7 @@
     [clouds startAnimations];
     [self scheduleUpdate];
     [self schedule:@selector(tick:)];
+    [self addEnemy];
 }
 
 - (void)update:(ccTime)dt
@@ -161,12 +174,12 @@
             mouseDef.maxForce = 1000.0f * self.currentBlob.body->GetMass();
             mouseJoint = (b2MouseJoint *)world->CreateJoint(&mouseDef);
             self.currentBlob.body->SetAwake(true);
-            self.currentBlob.scale = pinchGestureRecognizer.scale / 5.0f;
+            self.currentBlob.scale = pinchGestureRecognizer.scale / 2.0f;
             [self addChild:currentBlob];
             break;
         case UIGestureRecognizerStateChanged:
             mouseJoint->SetTarget(locationInWorld);
-            self.currentBlob.scale = pinchGestureRecognizer.scale / 5.0f;
+            self.currentBlob.scale = pinchGestureRecognizer.scale / 2.0f;
             [self.currentBlob setBodyPosition:gestureLocation];
             break;
         case UIGestureRecognizerStateEnded:
@@ -227,18 +240,22 @@
     
     for (b2Body *b = world->GetBodyList(); b; b = b->GetNext())
     {
-        b->ApplyForce(b2Vec2(world->GetGravity().x, -world->GetGravity().y), b->GetPosition());
         if (b->GetUserData() != NULL)
         {
-            Blob *blob = (__bridge Blob *)b->GetUserData();
-            if (blob.position.y - (blob.contentSize.height / 2) < water.position.y + (self.contentSize.height - kWaveOffset) && blob.reachedWater == NO)
+            Box2DNode *body = (__bridge Box2DNode*)b->GetUserData();
+            if([body isKindOfClass:[Blob class]])
             {
-                // for now, should probably calculate some kind of volume
-                float blobSize = blob.contentSize.height / 2;
-                blob.reachedWater = YES;
-                [self riseWaterWithAmount:blobSize];
+                b->ApplyForce(b2Vec2(world->GetGravity().x, world->GetGravity().y), b->GetPosition());
+                Blob *blob = (Blob *)body;
+                if (blob.position.y - (blob.contentSize.height / 2) <= water.position.y + (self.contentSize.height - kWaveOffset) && blob.reachedWater == NO)
+                {
+                    // for now, should probably calculate some kind of volume
+                    float blobSize = blob.contentSize.height / 2;
+                    blob.reachedWater = YES;
+                    [self riseWaterWithAmount:blobSize];
+                }
             }
-            [blob updatePhysics:dt];
+            [body updatePhysics:dt];
         }
     }
 }

@@ -65,6 +65,8 @@
 		7AD13E4C144F0DA70098E10C /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD13E4A144F0DA70098E10C /* libTestFlight.a */; };
 		7AD13E53144F0F110098E10C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD13E51144F0F110098E10C /* main.m */; };
 		7AD13E56144F11AE0098E10C /* GameScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AD13E55144F11AE0098E10C /* GameScene.mm */; };
+		7AFB33CE1453AB3A00D18EB7 /* Enemy.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AFB33CD1453AB3A00D18EB7 /* Enemy.mm */; };
+		7AFB33D21453AC4600D18EB7 /* Box2DNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AFB33D11453AC4600D18EB7 /* Box2DNode.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -169,6 +171,10 @@
 		7AD13E52144F0F110098E10C /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		7AD13E54144F11AE0098E10C /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		7AD13E55144F11AE0098E10C /* GameScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GameScene.mm; sourceTree = "<group>"; };
+		7AFB33CC1453AB3A00D18EB7 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
+		7AFB33CD1453AB3A00D18EB7 /* Enemy.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Enemy.mm; sourceTree = "<group>"; };
+		7AFB33D01453AC4600D18EB7 /* Box2DNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box2DNode.h; sourceTree = "<group>"; };
+		7AFB33D11453AC4600D18EB7 /* Box2DNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Box2DNode.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -390,6 +396,10 @@
 			children = (
 				7AD06B32145274CF00393B93 /* Blob.h */,
 				7AD06B33145274CF00393B93 /* Blob.mm */,
+				7AFB33CC1453AB3A00D18EB7 /* Enemy.h */,
+				7AFB33CD1453AB3A00D18EB7 /* Enemy.mm */,
+				7AFB33D01453AC4600D18EB7 /* Box2DNode.h */,
+				7AFB33D11453AC4600D18EB7 /* Box2DNode.mm */,
 			);
 			name = "Game Objects";
 			sourceTree = "<group>";
@@ -556,6 +566,8 @@
 				7AA2BA7A1452994400B3059D /* CCScrollLayer.m in Sources */,
 				7AA2BA7B1452994400B3059D /* CCTableLayer.m in Sources */,
 				7AA2BA7C1452994400B3059D /* CCTableLayerCell.m in Sources */,
+				7AFB33CE1453AB3A00D18EB7 /* Enemy.mm in Sources */,
+				7AFB33D21453AC4600D18EB7 /* Box2DNode.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

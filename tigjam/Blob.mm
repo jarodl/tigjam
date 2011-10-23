@@ -24,30 +24,15 @@
 
 - (id)initWithWorld:(b2World *)worldIn ptmRatio:(float)ptmRatioIn position:(CGPoint)positionIn
 {
-    if ((self = [super init]))
+    if ((self = [super initWithWorld:worldIn ptmRatio:ptmRatioIn position:positionIn]))
     {
         int i = [[RNG sharedInstance] randomNumberFrom:0 to:kBlobCount - 1];
         CCSprite *blobSprite = [CCSprite spriteWithSpriteFrameName:[NSString stringWithFormat:kBlobSpriteFrameNameFormat, i]];
         [self addChild:blobSprite];
         [self setContentSizeFromChildren];
 
-        world = worldIn;
-        ptmRatio = ptmRatioIn;
         self.reachedWater = NO;
-        
-        b2BodyDef bodyDef;
-        bodyDef.type = b2_dynamicBody;
-        bodyDef.position.Set(positionIn.x / ptmRatioIn, positionIn.y / ptmRatioIn);
-        bodyDef.userData = (__bridge void *)self;
-//        body = world->CreateBody(&bodyDef);
-//        b2PolygonShape boxShape;
-//        boxShape.SetAsBox((self.contentSize.width * 0.5) / ptmRatioIn, (self.contentSize.height * 0.5) / ptmRatioIn);
-//        b2FixtureDef boxShapeDef;
-//        boxShapeDef.shape = &boxShape;
-//        boxShapeDef.density = 1.0f;
-//        boxShapeDef.friction = 0.1f;
-//        boxShapeDef.restitution = 0.1f;
-//        body->CreateFixture(&boxShapeDef);
+
         self.position = positionIn;
         [self setBodyPosition:positionIn];
     }
@@ -57,11 +42,6 @@
 
 #pragma mark -
 #pragma mark Physics
-
-- (b2Body *)body
-{
-    return body;
-}
 
 - (void)setRotation:(float)rotationIn
 {
