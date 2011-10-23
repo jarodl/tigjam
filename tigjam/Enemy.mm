@@ -42,7 +42,7 @@
         circleShapeDef.shape = &circleShape;
         circleShapeDef.density = 1.0f;
         circleShapeDef.friction = 0.1f;
-        circleShapeDef.restitution = 0.1f;
+        circleShapeDef.restitution = 1.0f;
         body->CreateFixture(&circleShapeDef);
     }
     

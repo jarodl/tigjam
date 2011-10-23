@@ -175,6 +175,7 @@
             mouseJoint = (b2MouseJoint *)world->CreateJoint(&mouseDef);
             self.currentBlob.body->SetAwake(true);
             self.currentBlob.scale = pinchGestureRecognizer.scale / 2.0f;
+            [self.currentBlob setBodyPosition:gestureLocation];
             [self addChild:currentBlob];
             break;
         case UIGestureRecognizerStateChanged:
