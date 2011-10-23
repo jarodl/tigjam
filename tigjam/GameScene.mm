@@ -167,8 +167,7 @@
         case UIGestureRecognizerStateChanged:
             mouseJoint->SetTarget(locationInWorld);
             self.currentBlob.scale = pinchGestureRecognizer.scale / 5.0f;
-            if (ccpDistance(gestureLocation, currentBlob.position) < kGesturePositionChangeLimit)
-                self.currentBlob.position = gestureLocation;
+            [self.currentBlob setBodyPosition:gestureLocation];
             break;
         case UIGestureRecognizerStateEnded:
             if (mouseJoint)

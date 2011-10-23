@@ -20,5 +20,6 @@
 + (Blob *)blobWithWorld:(b2World *)worldIn ptmRatio:(float)ptmRatioIn position:(CGPoint)positionIn;
 - (id)initWithWorld:(b2World *)worldIn ptmRatio:(float)ptmRatioIn position:(CGPoint)positionIn;
 - (void)updatePhysics:(ccTime)dt;
+- (void)setBodyPosition:(CGPoint)position;
 
 @end

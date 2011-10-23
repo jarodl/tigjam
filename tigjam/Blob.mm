@@ -33,22 +33,23 @@
 
         world = worldIn;
         ptmRatio = ptmRatioIn;
-        self.position = positionIn;
         self.reachedWater = NO;
         
         b2BodyDef bodyDef;
         bodyDef.type = b2_dynamicBody;
         bodyDef.position.Set(positionIn.x / ptmRatioIn, positionIn.y / ptmRatioIn);
         bodyDef.userData = (__bridge void *)self;
-        body = world->CreateBody(&bodyDef);
-        b2PolygonShape boxShape;
-        boxShape.SetAsBox((self.contentSize.width * 0.5) / ptmRatioIn, (self.contentSize.height * 0.5) / ptmRatioIn);
-        b2FixtureDef boxShapeDef;
-        boxShapeDef.shape = &boxShape;
-        boxShapeDef.density = 1.0f;
-        boxShapeDef.friction = 0.1f;
-        boxShapeDef.restitution = 0.1f;
-        body->CreateFixture(&boxShapeDef);
+//        body = world->CreateBody(&bodyDef);
+//        b2PolygonShape boxShape;
+//        boxShape.SetAsBox((self.contentSize.width * 0.5) / ptmRatioIn, (self.contentSize.height * 0.5) / ptmRatioIn);
+//        b2FixtureDef boxShapeDef;
+//        boxShapeDef.shape = &boxShape;
+//        boxShapeDef.density = 1.0f;
+//        boxShapeDef.friction = 0.1f;
+//        boxShapeDef.restitution = 0.1f;
+//        body->CreateFixture(&boxShapeDef);
+        self.position = positionIn;
+        [self setBodyPosition:positionIn];
     }
     
     return self;
@@ -66,6 +67,26 @@
 {
     [super setRotation:rotationIn];
     body->SetTransform(body->GetPosition(), CC_DEGREES_TO_RADIANS(-rotationIn));
+}
+
+- (void)setBodyPosition:(CGPoint)position
+{
+    b2BodyDef bodyDef;
+    bodyDef.type = b2_dynamicBody;
+    bodyDef.position.Set(position.x / ptmRatio, position.y / ptmRatio);
+    bodyDef.userData = (__bridge void *)self;
+    if (body)
+        world->DestroyBody(body);
+    body = world->CreateBody(&bodyDef);
+    b2PolygonShape boxShape;
+    boxShape.SetAsBox((self.contentSize.width * 0.5 * self.scale) / ptmRatio,
+                      (self.contentSize.height * 0.5 * self.scale) / ptmRatio);
+    b2FixtureDef boxShapeDef;
+    boxShapeDef.shape = &boxShape;
+    boxShapeDef.density = 1.0f;
+    boxShapeDef.friction = 0.1f;
+    boxShapeDef.restitution = 0.1f;
+    body->CreateFixture(&boxShapeDef);
 }
 
 - (void)setScale:(float)scaleIn
