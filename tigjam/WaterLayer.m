@@ -68,7 +68,9 @@
 
 - (CGPoint)frontWavePosition
 {
-    return [[waves lastObject] position];
+    CCSprite *frontWave = [waves lastObject];
+    CGPoint frontPosition = [self convertToWorldSpace:frontWave.position];
+    return ccp(frontPosition.x - (self.contentSize.width / 2), frontPosition.y - self.contentSize.height + (frontWave.contentSize.height / 2));
 }
 
 - (void)startAnimating
@@ -111,8 +113,10 @@
         self.anchorPoint = ccp(0.5, 1.0f);
         CCSprite *frontWave = [CCSprite spriteWithSpriteFrameName:[NSString stringWithFormat:kWaveFrameName, 0]];
         frontWave.opacity = kFrontWaveOpacity;
+        frontWave.position = [[Environment sharedInstance] fromTopMiddleX:0.0f y:frontWave.contentSize.height / 2];
         [self addChild:frontWave];
         CCSprite *waveLine = [CCSprite spriteWithSpriteFrameName:kWaveLineFrameName];
+        waveLine.position = frontWave.position;
         [self addChild:waveLine];
         CCLayerColor *water = [CCLayerColor layerWithColor:ccc4(kFrontWaterColor.r,
                                                                 kFrontWaterColor.g,

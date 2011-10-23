@@ -14,6 +14,8 @@
     b2Vec2 currentForce;
 }
 
+@property (nonatomic, assign) BOOL reachedWater;
+
 - (b2Body *)body;
 + (Blob *)blobWithWorld:(b2World *)worldIn ptmRatio:(float)ptmRatioIn position:(CGPoint)positionIn;
 - (id)initWithWorld:(b2World *)worldIn ptmRatio:(float)ptmRatioIn position:(CGPoint)positionIn;

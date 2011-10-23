@@ -13,6 +13,7 @@
 #import "Environment.h"
 #import "Blob.h"
 #import "CCGestureRecognizer.h"
+#import "CCMoveHorizVert.h"
 
 #define kObjectsSpriteSheetName @"Objects"
 #define kBackgroundColor ccc4(177, 235, 255, 255)
@@ -31,6 +32,7 @@
 
 - (void)handlePinchGesture:(UIPinchGestureRecognizer *)pinchGestureRecognizer;
 - (void)handleRotationGesture:(UIRotationGestureRecognizer *)rotationGesture;
+- (void)riseWaterWithAmount:(float)amount;
 @end
 
 @implementation GameScene
@@ -62,7 +64,7 @@
         [self addChild:water];
         
         self.frontWater = [FrontWaterLayer node];
-        self.frontWater.position = ccpSub([water frontWavePosition], ccp(0, self.contentSize.height - kWaveOffset));
+        self.frontWater.position = [water frontWavePosition];
         [self addChild:frontWater z:kFrontZIndex];
         
         UIPinchGestureRecognizer *pinchGestureRecognizer = [UIPinchGestureRecognizer new];
@@ -137,7 +139,7 @@
 
 - (void)update:(ccTime)dt
 {
-    self.frontWater.position = ccpSub([water frontWavePosition], ccp(0, self.contentSize.height - kWaveOffset));
+    frontWater.position = [water frontWavePosition];
 }
 
 #pragma mark -
@@ -171,7 +173,9 @@
         case UIGestureRecognizerStateEnded:
             if (mouseJoint)
             {
-//                world->DestroyJoint(mouseJoint);
+                // TODO:
+                // for some reason this causes a crash
+                //world->DestroyJoint(mouseJoint);
                 mouseJoint = NULL;
             }
             self.currentBlob = nil;
@@ -205,6 +209,14 @@
 }
 
 #pragma mark -
+#pragma mark Water actions
+
+- (void)riseWaterWithAmount:(float)amount
+{
+    [water runAction:[CCMoveVerticalBy actionWithDuration:1.25f verticalPosition:amount]];
+}
+
+#pragma mark -
 #pragma mark Physics
 
 - (void)tick:(ccTime)dt
@@ -220,6 +232,13 @@
         if (b->GetUserData() != NULL)
         {
             Blob *blob = (__bridge Blob *)b->GetUserData();
+            if (blob.position.y - (blob.contentSize.height / 2) < water.position.y + (self.contentSize.height - kWaveOffset) && blob.reachedWater == NO)
+            {
+                // for now, should probably calculate some kind of volume
+                float blobSize = blob.contentSize.height / 2;
+                blob.reachedWater = YES;
+                [self riseWaterWithAmount:blobSize];
+            }
             [blob updatePhysics:dt];
         }
     }

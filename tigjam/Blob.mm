@@ -15,6 +15,8 @@
 
 @implementation Blob
 
+@synthesize reachedWater;
+
 + (Blob *)blobWithWorld:(b2World *)worldIn ptmRatio:(float)ptmRatioIn position:(CGPoint)positionIn
 {
     return [[self alloc] initWithWorld:worldIn ptmRatio:ptmRatioIn position:positionIn];
@@ -32,6 +34,7 @@
         world = worldIn;
         ptmRatio = ptmRatioIn;
         self.position = positionIn;
+        self.reachedWater = NO;
         
         b2BodyDef bodyDef;
         bodyDef.type = b2_dynamicBody;
