@@ -25,7 +25,7 @@ def main():
         data = destination + '-hd.plist'
         sheetname = destination + '-hd.pvr.ccz'
         pixel_format = 'RGBA8888'
-        call([texture_packer, '--shape-padding', '10', '--premultiply-alpha', '--border-padding',
+        call([texture_packer, '--shape-padding', '10', '--border-padding',
             '20', '--format', 'cocos2d', '--auto-sd', '--opt', pixel_format,
             '--data', data, '--sheet',
         sheetname, source])
