@@ -7,9 +7,12 @@
 //
 
 #import "Enemy.h"
+#import "RNG.h"
 #import "CCNode+setContentSizeFromChildren.h"
 
 #define kEnemySpriteFrameName @"enemy.png"
+#define kLinearVelocity 3.0f
+#define kAngularVelocity 0.5f
 
 @interface Enemy ()
 @end
@@ -41,7 +44,7 @@
         b2FixtureDef circleShapeDef;
         circleShapeDef.shape = &circleShape;
         circleShapeDef.density = 1.0f;
-        circleShapeDef.friction = 0.1f;
+        circleShapeDef.friction = 0.0f;
         circleShapeDef.restitution = 1.0f;
         body->CreateFixture(&circleShapeDef);
     }
@@ -49,8 +52,17 @@
     return self;
 }
 
+- (void)applyImpulse
+{
+    b2Vec2 force = b2Vec2([[RNG sharedInstance] randomFloatFrom:-kLinearVelocity to:kLinearVelocity],
+                          [[RNG sharedInstance] randomFloatFrom:-kLinearVelocity to:kLinearVelocity]);
+    body->ApplyLinearImpulse(force, body->GetPosition());
+    body->ApplyAngularImpulse(kAngularVelocity);
+}
+
 - (void)updatePhysics:(ccTime)dt
 {
+    self.rotation = CC_RADIANS_TO_DEGREES(body->GetAngle());
     self.position = CGPointMake(body->GetPosition().x * ptmRatio, body->GetPosition().y * ptmRatio);
 }
 

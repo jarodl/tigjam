@@ -9,17 +9,23 @@
 #import "Blob.h"
 #import "RNG.h"
 #import "CCNode+setContentSizeFromChildren.h"
+#import "GB2ShapeCache.h"
 
 #define kBlobSpriteFrameNameFormat @"blob_%d.png"
-#define kBlobCount 5
+#define kBlobVerticesFileName @"Objects.plist"
+#define kBlobCount 1
 
 @interface Blob ()
+@property (nonatomic, strong) CCSprite *blobSprite;
+@property (nonatomic, strong) NSString *name;
 - (void)updateBodyWithPosition:(CGPoint)position andScale:(float)scale;
 @end
 
 @implementation Blob
 
 @synthesize reachedWater;
+@synthesize blobSprite;
+@synthesize name;
 
 + (Blob *)blobWithWorld:(b2World *)worldIn ptmRatio:(float)ptmRatioIn position:(CGPoint)positionIn
 {
@@ -31,7 +37,9 @@
     if ((self = [super initWithWorld:worldIn ptmRatio:ptmRatioIn position:positionIn]))
     {
         int i = [[RNG sharedInstance] randomNumberFrom:0 to:kBlobCount - 1];
-        CCSprite *blobSprite = [CCSprite spriteWithSpriteFrameName:[NSString stringWithFormat:kBlobSpriteFrameNameFormat, i]];
+        self.name = [NSString stringWithFormat:@"blob_%d", i];
+        [[GB2ShapeCache sharedShapeCache] addShapesWithFile:kBlobVerticesFileName];
+        self.blobSprite = [CCSprite spriteWithSpriteFrameName:[NSString stringWithFormat:kBlobSpriteFrameNameFormat, i]];
         [self addChild:blobSprite];
         [self setContentSizeFromChildren];
 
@@ -74,15 +82,15 @@
     if (body)
         world->DestroyBody(body);
     body = world->CreateBody(&bodyDef);
-    b2PolygonShape boxShape;
-    boxShape.SetAsBox((self.contentSize.width * 0.5 * scale) / ptmRatio,
-                      (self.contentSize.height * 0.5 * scale) / ptmRatio);
-    b2FixtureDef boxShapeDef;
-    boxShapeDef.shape = &boxShape;
-    boxShapeDef.density = 1.0f;
-    boxShapeDef.friction = 0.1f;
-    boxShapeDef.restitution = 0.1f;
-    body->CreateFixture(&boxShapeDef);
+//    b2FixtureDef boxShapeDef;
+//    boxShapeDef.shape = &boxShape;
+//    boxShapeDef.density = 1.0f;
+//    boxShapeDef.friction = 0.1f;
+//    boxShapeDef.restitution = 0.1f;
+//    body->CreateFixture(&boxShapeDef);
+    // add the fixture definitions to the body
+	[[GB2ShapeCache sharedShapeCache] addFixturesToBody:body forShapeName:name];
+    [self.blobSprite setAnchorPoint:[[GB2ShapeCache sharedShapeCache] anchorPointForShape:name]];
 }
 
 - (void)updatePhysics:(ccTime)dt

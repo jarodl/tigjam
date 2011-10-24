@@ -11,5 +11,6 @@
 @interface Enemy : Box2DNode
 
 + (Enemy *)enemyWithWorld:(b2World *)worldIn ptmRatio:(float)ptmRatioIn position:(CGPoint)positionIn;
+- (void)applyImpulse;
 
 @end

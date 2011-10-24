@@ -23,6 +23,7 @@
 #define PTM_RATIO 50.0f
 #define kFrontZIndex 5
 #define kWorldGravity -7.0f
+#define kGroundPadding 50.0f
 
 @interface GameScene ()
 @property (nonatomic, strong) FrontWaterLayer *frontWater;
@@ -56,19 +57,19 @@
     {
         [[ImageLoader sharedInstance] loadSpriteSheet:kObjectsSpriteSheetName];
         self.contentSize = [Environment sharedInstance].screenSize;
-        CCLayerColor *backgroundLayer = [CCLayerColor layerWithColor:kBackgroundColor];
-        [self addChild:backgroundLayer];
-        
-        self.clouds = [CloudLayer node];
-        [self addChild:clouds];
-        
-        self.water = [WaterLayer node];
-        water.position = [[Environment sharedInstance] fromBottomLeftX:0.0f y:-(self.contentSize.height - kWaveOffset)];
-        [self addChild:water];
-        
-        self.frontWater = [FrontWaterLayer node];
-        self.frontWater.position = [water frontWavePosition];
-        [self addChild:frontWater z:kFrontZIndex];
+//        CCLayerColor *backgroundLayer = [CCLayerColor layerWithColor:kBackgroundColor];
+//        [self addChild:backgroundLayer];
+//        
+//        self.clouds = [CloudLayer node];
+//        [self addChild:clouds];
+//        
+//        self.water = [WaterLayer node];
+//        water.position = [[Environment sharedInstance] fromBottomLeftX:0.0f y:-(self.contentSize.height - kWaveOffset)];
+//        [self addChild:water];
+//        
+//        self.frontWater = [FrontWaterLayer node];
+//        self.frontWater.position = [water frontWavePosition];
+//        [self addChild:frontWater z:kFrontZIndex];
         
         UIPinchGestureRecognizer *pinchGestureRecognizer = [UIPinchGestureRecognizer new];
         self.gestureRecognizer = [CCGestureRecognizer recognizerWithRecognizer:pinchGestureRecognizer
@@ -103,14 +104,18 @@
         // ground box shape
         b2PolygonShape groundBox;
         // left
-        groundBox.SetAsEdge(b2Vec2(0, self.contentSize.height / PTM_RATIO), b2Vec2_zero);
+        groundBox.SetAsEdge(b2Vec2(-kGroundPadding / PTM_RATIO, self.contentSize.height / PTM_RATIO),
+                            b2Vec2(-kGroundPadding / PTM_RATIO, 0));
         groundBody->CreateFixture(&groundBox, 0);
         // right
-        groundBox.SetAsEdge(b2Vec2(self.contentSize.width / PTM_RATIO, self.contentSize.height / PTM_RATIO),
-                            b2Vec2(self.contentSize.width / PTM_RATIO, 0));
+        groundBox.SetAsEdge(b2Vec2((self.contentSize.width + kGroundPadding) / PTM_RATIO,
+                                   self.contentSize.height / PTM_RATIO),
+                            b2Vec2((self.contentSize.width + kGroundPadding) / PTM_RATIO,
+                                   -kGroundPadding / PTM_RATIO));
         groundBody->CreateFixture(&groundBox, 0);
         // bottom
-        groundBox.SetAsEdge(b2Vec2_zero, b2Vec2(self.contentSize.width / PTM_RATIO, 0));
+        groundBox.SetAsEdge(b2Vec2(-kGroundPadding / PTM_RATIO, kGroundPadding / PTM_RATIO),
+                            b2Vec2((self.contentSize.width + kGroundPadding) / PTM_RATIO, -kGroundPadding / PTM_RATIO));
         groundBody->CreateFixture(&groundBox, 0);
     }
     
@@ -135,6 +140,7 @@
     CGPoint startingPosition = [[Environment sharedInstance] fromTopMiddleX:0.0f y:10.0f];
     Enemy *enemy = [Enemy enemyWithWorld:world ptmRatio:PTM_RATIO position:startingPosition];
     [self addChild:enemy];
+    [enemy applyImpulse];
 }
 
 #pragma mark -

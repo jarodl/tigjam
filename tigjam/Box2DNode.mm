@@ -32,7 +32,7 @@
 
 - (void)dealloc
 {
-    world->DestroyBody(body);
+//    world->DestroyBody(body);
 }
 
 @end

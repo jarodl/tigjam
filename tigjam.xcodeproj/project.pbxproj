@@ -67,6 +67,8 @@
 		7AD13E56144F11AE0098E10C /* GameScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AD13E55144F11AE0098E10C /* GameScene.mm */; };
 		7AFB33CE1453AB3A00D18EB7 /* Enemy.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AFB33CD1453AB3A00D18EB7 /* Enemy.mm */; };
 		7AFB33D21453AC4600D18EB7 /* Box2DNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AFB33D11453AC4600D18EB7 /* Box2DNode.mm */; };
+		7AFB33DA1454014500D18EB7 /* GB2ShapeCache.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7AFB33D91454014500D18EB7 /* GB2ShapeCache.mm */; };
+		7AFB33DD1454029800D18EB7 /* Objects.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AFB33DC1454029800D18EB7 /* Objects.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -175,6 +177,9 @@
 		7AFB33CD1453AB3A00D18EB7 /* Enemy.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Enemy.mm; sourceTree = "<group>"; };
 		7AFB33D01453AC4600D18EB7 /* Box2DNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box2DNode.h; sourceTree = "<group>"; };
 		7AFB33D11453AC4600D18EB7 /* Box2DNode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Box2DNode.mm; sourceTree = "<group>"; };
+		7AFB33D81454014500D18EB7 /* GB2ShapeCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GB2ShapeCache.h; sourceTree = "<group>"; };
+		7AFB33D91454014500D18EB7 /* GB2ShapeCache.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GB2ShapeCache.mm; sourceTree = "<group>"; };
+		7AFB33DC1454029800D18EB7 /* Objects.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Objects.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,6 +298,7 @@
 				7AB0F62E14520ACE0025AFFA /* MainMenuScene.h */,
 				7AB0F62F14520ACE0025AFFA /* MainMenuScene.mm */,
 				7A4DBABE14491E9700741C3E /* Resources */,
+				7AFB33DB1454016100D18EB7 /* Vertices */,
 				7A32C8D1144F192400FD2C94 /* Generated */,
 				7A4DBAD214491E9700741C3E /* libs */,
 			);
@@ -319,6 +325,7 @@
 		7A4DBAD214491E9700741C3E /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				7AFB33D71454013600D18EB7 /* Physics Editor */,
 				7AD06B351452788100393B93 /* CCKit */,
 				7ABA71CB1452275E00B42713 /* SFMT */,
 				7AD13E49144F0DA70098E10C /* TestFlight */,
@@ -441,6 +448,24 @@
 			name = "Supporting FIles";
 			sourceTree = "<group>";
 		};
+		7AFB33D71454013600D18EB7 /* Physics Editor */ = {
+			isa = PBXGroup;
+			children = (
+				7AFB33D81454014500D18EB7 /* GB2ShapeCache.h */,
+				7AFB33D91454014500D18EB7 /* GB2ShapeCache.mm */,
+			);
+			name = "Physics Editor";
+			sourceTree = "<group>";
+		};
+		7AFB33DB1454016100D18EB7 /* Vertices */ = {
+			isa = PBXGroup;
+			children = (
+				7AFB33DC1454029800D18EB7 /* Objects.plist */,
+			);
+			name = Vertices;
+			path = Generated;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXLegacyTarget section */
@@ -531,6 +556,7 @@
 				7AA2BA8E1452A06F00B3059D /* Objects-hd.pvr.ccz in Resources */,
 				7AA2BA8F1452A06F00B3059D /* Objects.plist in Resources */,
 				7AA2BA901452A06F00B3059D /* Objects.pvr.ccz in Resources */,
+				7AFB33DD1454029800D18EB7 /* Objects.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,6 +594,7 @@
 				7AA2BA7C1452994400B3059D /* CCTableLayerCell.m in Sources */,
 				7AFB33CE1453AB3A00D18EB7 /* Enemy.mm in Sources */,
 				7AFB33D21453AC4600D18EB7 /* Box2DNode.mm in Sources */,
+				7AFB33DA1454014500D18EB7 /* GB2ShapeCache.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
